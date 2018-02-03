@@ -1,0 +1,31 @@
+{% extends 'base/base_eventos.html' %}
+
+{% block title %} Consutal  Eventos {% endblock title %}</title>
+
+			{% block context%}
+			<div class="crea_content">
+				<h3 class="crea_proceso">Eventos: Eventos</h3>
+				<a class="icon-reply crea_boton" href="{% url 'eventos:evn_panel' %}">Volver</a>
+
+			</div>
+			<div>
+				<div>
+					<div class="form_content">
+
+						<div class="form_titulo"><h1>Visualiza  Eventos</h1></div>
+						<div class="form_esc">
+							<a class="icon-cancel" href="{% url 'eventos:evn_panel' %}"></a>
+						</div>
+						<div class="form_row"><div class="form_label">Fecha del evento</div><div>{{ object.evn_fechaev }}</div></div>
+						<div class="form_row"><div class="form_label">Zipcodigo       </div><div>{{ object.evn_zipcode }}</div></div>
+						<div class="form_row"><div class="form_label">Dirección       </div><div>{{ object.evn_direcci }}</div></div>
+						<div class="form_row"><div class="form_label">Nombre del local</div><div>{{ object.evn_localid }}</div></div>
+						<div class="form_row"><div class="form_label">Asistieron      </div><div>{{ object.evn_asisten }}</div></div>
+						<div class="form_row"><div class="form_label">Status          </div><div>{{ object.evn_pendien }}</div></div>
+						<br><br>
+						<div ><a class="icon-reply crea_boton" href="{% url 'eventos:evn_panel' %}">  Ok   </a></div>
+						<br>
+					</div>
+				</div>
+			</div>
+		{% endblock context%}

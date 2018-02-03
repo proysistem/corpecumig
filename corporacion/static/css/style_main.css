@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Tamma|Open+Sans|Viga');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Viga');
+*   {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	}
+img {
+	display: block;
+	max-width: 100%;
+	}
+h1, h2,h3, h4, h5, h6{
+	font-family: 'Viga', sans-serif;
+	text-align: center;
+	}
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	}
+/*------------------------ Estilos del Info ----------------------- */
+
+.fondo_page
+	{
+	width: 100%;
+	height: 100vh;
+	}
+.back_slide
+	{
+	display: flex;
+	width: 100%;
+	position: relative;
+	top: 170px;
+	}
+.back_image
+	{
+	display: block;
+	min-width: 83%;
+	max-width: 83%;
+	}
+.info_content
+	{
+	align-content: center;
+	display: block;
+	top: 195px;
+	padding: 5px;
+	position: absolute;
+	width: 99%;
+	z-index: 3;
+	}
+.info_columna
+	{
+	background-color: rgba(16,137,130,0.3);
+	color: #fff;
+	display: block;
+	margin: 15px auto;
+	overflow: auto;
+	padding: 15px;
+	}
+.info_banner
+	{
+	background: rgba(22,22,22,0.3);
+	color: #fff;
+	display: block;
+	font-size: 15px;
+	text-align: center;
+	width: 100%;
+	&.infobanner_titulo
+		{
+		font-size: 1.8em;
+		}
+	&.banner_text
+		{
+		font-size: 1.2em;
+		}
+	}
+	aside
+	{
+	width: 17%;
+	align-content: left;
+	background: linear-gradient(#295641, #58A2B4); /* Standard syntax */
+	}
+.aside_main
+	{
+	display: block;
+	width: 17%;
+	align-content: right;
+	color: #fff;
+	background: linear-gradient(#295641, #58A2B4); /* Standard syntax */
+	}
+/*------------------------ Estilos responsive ----------------------- */
+@media(min-width: 768px){
+	.form_columns
+	{
+	display: flex;
+	flex-wrap: wrap;
+	width: 99%;
+	margin: 0 auto;
+	justify-content: space-between;
+	}
+	.info_columna
+	{
+	width: 49%;
+	}
+	.info_titulo
+	{
+	font-size: 2em;
+	}
+}
+@media(min-width: 1024px){
+
+ 	.form_columns
+	{
+	padding: 0 2% 0 2%;
+	}
+	.info_columna
+	{
+	width: 32%;
+	}
+	.info_titulo
+	{
+	font-size: 2.2em;
+	}
+}

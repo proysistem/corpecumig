@@ -1,0 +1,23 @@
+		<header class="header">
+			<div class="content">
+				<img class="logo" src="static/images/logo01.png">
+				<span class="icon-menu" id="btn-menu"></span>
+				<nav class="nav" id="nav">
+					<ul id="menu">
+						<li><a href="{% url 'eventos:evn_panel' %}">Inicio</a></li>
+						<li><a href="{% url 'eventos:evn_panel' %}">Nosotros</a></li>
+						<li><a href="{% url 'eventos:evn_panel' %}">Productos</a></li>
+						<li><a href="#">Show room</a>
+							<ul>
+								<li><a href="{% url 'eventos:evn_panel' %}">Galeria</a></li>
+								<li><a href="{% url 'eventos:evn_panel' %}">Videos</a></li>
+							</ul>
+						</li>
+						<li><a href="{% url 'eventos:evn_panel' %}">Contacto</a></li>
+					</ul><br><br><br>
+					<ul>
+						<li class="login-content"><a class="logear icon-user" href="{% url 'eventos:evn_panel' %}">   Login   </a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>

@@ -1,0 +1,55 @@
+{% extends 'base/base_eventos.html' %}
+
+{% block title %} Graba Eventos {% endblock title %}</title>
+
+			{% block context%}
+			<div class="crea_content">
+				<h3 class="crea_proceso">Eventos:Eventos</h3>
+				<a class="icon-reply crea_boton" href="{% url 'eventos:evn_panel' %}">Volver</a>
+
+			</div>
+			<div>
+				{% for message in messages %}
+					<strong>Mensaje:</strong> {{ message }}
+				{% endfor %}
+				<form method="POST" enctype="multipart">{% csrf_token %}
+					<div class="form_content">
+						<div class="form_titulo"><h1>Graba Eventos</h1></div>
+						<div class="form_esc">
+							<a class="icon-cancel" href="{% url 'eventos:evn_panel' %}"></a>
+						</div>
+						{% if form.error %}
+							<div class="form_errors" role="alert">
+								{{ form.error }}
+							</div>
+						{% endif %}
+
+						{% if forms.error %}
+							<div class="form_errors" role="alert">
+								{{ form.error }}
+							</div>
+						{% endif %}
+						{% comment %}
+							#TODO: # Verificacion de errores
+						{% endcomment %}
+						{% for field in form %}
+							{% for error in field.errors %}
+								<strong>{{ field.label }}</strong>: {{ error }}<br>
+							{% endfor %}
+						{% endfor %}
+						{% for error in form.non_field_errors %}
+							<strong>{{ error }}</strong>
+						{% endfor %}
+						<div class="form_row"><div class="form_label"><label for="{{form.evn_fechaev.name}}">{{form.evn_fechaev.label}}</label></div><div>{{form.evn_fechaev}}</div></div>
+						<div class="form_row"><div class="form_label"><label for="{{form.evn_zipcode.name}}">{{form.evn_zipcode.label}}</label></div><div>{{form.evn_zipcode}}</div></div>
+						<div class="form_row"><div class="form_label"><label for="{{form.evn_direcci.name}}">{{form.evn_direcci.label}}</label></div><div>{{form.evn_direcci}}</div></div>
+						<div class="form_row"><div class="form_label"><label for="{{form.evn_localid.name}}">{{form.evn_localid.label}}</label></div><div>{{form.evn_localid}}</div></div>
+						<div class="form_row"><div class="form_label"><label for="{{form.evn_asisten.name}}">{{form.evn_asisten.label}}</label></div><div>{{form.evn_asisten}}</div></div>
+						<div class="form_row"><div class="form_label"><label for="{{form.evn_pendien.name}}">{{form.evn_pendien.label}}</label></div><div>{{form.evn_pendien}}</div></div>
+						<br><br>
+						<div ><button class="icon-database form_submit" type="submit">  Guardar  </button></div>
+						<br>
+					</div>
+				</form>
+			</div>
+		{% endblock context%}

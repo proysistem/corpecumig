@@ -1,0 +1,28 @@
+<aside>
+	<div class="menu_content">
+		<div>
+			{% comment %}
+				<img class="foto_user" src="/static/images/placeholder300.png">
+			{% endcomment %}
+			<img class="foto_user" src="/static/images/siga.gif">
+		</div>
+		<div>
+			<div>Sucursal  {{ request.user.sucursal.id }} : {{ request.user.sucursal }}  </div>
+		</div>
+		<div>
+			<div>UIsuario {{ request.user.username }}</div>
+		</div><br>
+		<div>
+			<h1>Aplicaciones</h1>
+		</div><br><br>
+		<div>
+			<td><a class="boton_aplicacion" href="{% url 'inicio:home' %}">Home</a></td>
+		</div>
+		<div>
+			<td><a class="boton_aplicacion" href="{% url 'eventos:evn_panel' %}">Eventos</a></td>
+		</div>
+		<div>
+			<td><a class="boton_aplicacion" href="{% url 'usuarios:usr_new' %}">Usuarios</a></td>
+		</div> <br>
+	</div>
+</aside>
