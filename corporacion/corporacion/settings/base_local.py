@@ -28,7 +28,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = [
 #     '45.55.223.175',
-#     '.corporacionec.com',
+#     '.corpecumig.com',
 # ]
 
 
@@ -48,6 +48,7 @@ LOCAL_APPS = [
     'apps.inicio',
     'apps.users',
     'apps.eventos'
+    'apps.visitantes'
 ]
 
 THIRD_PARTY_APPS = [
