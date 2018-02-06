@@ -1,7 +1,6 @@
 
 from django.conf.urls import url
-from django.contrib import admin
-from apps.eventos.views import AspNuevo, EvnLista, MsgNuevo
+from apps.visitantes.views import AspNuevo, EvnLista, MsgNuevo
 
 
 urlpatterns = [
