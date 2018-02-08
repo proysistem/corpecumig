@@ -11,3 +11,10 @@ def home(request):
     context = {}
     template = 'inicio/index.html'
     return render(request, template, context)
+
+
+def proyecto(request):
+
+    context = {}
+    template = 'inicio/proyecto.html'
+    return render(request, template, context)

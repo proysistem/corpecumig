@@ -1,22 +1,24 @@
 		<header class="header">
 			<div class="content">
 				<img class="logo" src="static/images/logo01.png">
-				<span class="icon-menu" id="btn-menu"></span>
+				<span class="icon-th-list" id="btn-menu"></span>
 				<nav class="nav" id="nav">
 					<ul id="menu">
-						<li><a href="{% url 'eventos:evn_panel' %}">Inicio</a></li>
-						<li><a href="{% url 'eventos:evn_panel' %}">Nosotros</a></li>
-						<li><a href="{% url 'eventos:evn_panel' %}">Productos</a></li>
-						<li><a href="#">Show room</a>
+						<li class="menu__item"><a class="menu__link" href="#">Inicio</a></li>
+						<li class="menu__item"><a class="menu__link" href="#">Nosotros</a></li>
+						<li class="menu__item"><a class="menu__link" href="{% url 'inicio:proyecto' %}">Proyecto</a></li>
+						{% comment %}
+						<li class="menu__item"><a class="menu__link" href="#">Show room</a>
 							<ul>
-								<li><a href="{% url 'eventos:evn_panel' %}">Galeria</a></li>
-								<li><a href="{% url 'eventos:evn_panel' %}">Videos</a></li>
+								<li><a href="#">Galeria</a></li>
+								<li><a href="#">Videos</a></li>
 							</ul>
 						</li>
-						<li><a href="{% url 'eventos:evn_panel' %}">Contacto</a></li>
+						{% endcomment %}
+						<li class="menu__item"><a class="menu__link" href="#">Contactar</a></li>
 					</ul><br><br><br>
 					<ul>
-						<li class="login-content"><a class="logear icon-user" href="{% url 'asistentes:evn_panel' %}">   Login   </a></li>
+						<li class="login-content"><a class="logear icon-user" href="{% url 'visitantes:evn_panel' %}">   Login   </a></li>
 					</ul>
 				</nav>
 			</div>

@@ -17,6 +17,8 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1em;
 	}
+/*------------------------ Estilos del menu responsive ----------------------- */
+
 /*------------------------ Estilos del Info ----------------------- */
 
 .fondo_page
@@ -31,11 +33,23 @@ body{
 	position: relative;
 	top: 170px;
 	}
-.back_image
+.back_slide.back_image
 	{
 	display: block;
 	min-width: 83%;
 	max-width: 83%;
+	width: 80%;
+	}
+.back_slide	aside
+	{
+	width: 10%;
+	align-content: left;
+	background: linear-gradient(#295641, #58A2B4); /* Standard syntax */
+	}
+.back_image img
+	{
+	background-color: green;
+	width: 100%;
 	}
 .info_content
 	{
@@ -73,12 +87,7 @@ body{
 		font-size: 1.2em;
 		}
 	}
-	aside
-	{
-	width: 17%;
-	align-content: left;
-	background: linear-gradient(#295641, #58A2B4); /* Standard syntax */
-	}
+
 .aside_main
 	{
 	display: block;

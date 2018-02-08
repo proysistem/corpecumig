@@ -34,6 +34,7 @@ class Aspirante(models.Model):
 
 class Evento(models.Model):
     evn_fechaev = models.DateField('Fecha deEvento')
+    evn_horaevn = models.TimeField('Hora del evento')
     evn_zipcode = models.ForeignKey(Zipcodigo)
     evn_direcci = models.TextField('Dirección', max_length=75)
     evn_localid = models.TextField('Local', max_length=50)

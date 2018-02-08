@@ -1,0 +1,57 @@
+{% extends 'base/base_eventos.html' %}
+
+{% block title %} Graba  Solicitud {% endblock title %}</title>
+
+			{% block context%}
+			<div class="crea_content">
+				<h3 class="crea_proceso">Visitantes:  Solicitud</h3>
+				<a class="icon-reply crea_boton" href="{% url 'visitantes:evn_panel' %}">Volver</a>
+
+			</div>
+			<div>
+				{% for message in messages %}
+					<strong>Mensaje:</strong> {{ message }}
+				{% endfor %}
+				<form method="POST" enctype="multipart">{% csrf_token %}
+					<div class="form_content">
+						<div class="form_titulo"><h1>Solicitar Exposición</h1></div>
+						<div class="form_esc">
+							<a class="icon-cancel" href="{% url 'visitantes:evn_panel' %}"></a>
+						</div>
+						{% if form.error %}
+							<div class="form_errors" role="alert">
+								{{ form.error }}
+							</div>
+						{% endif %}
+
+						{% if forms.error %}
+							<div class="form_errors" role="alert">
+								{{ form.error }}
+							</div>
+						{% endif %}
+						{% comment %}
+							#TODO: # Verificacion de errores
+						{% endcomment %}
+						{% for field in form %}
+							{% for error in field.errors %}
+								<strong>{{ field.label }}</strong>: {{ error }}<br>
+							{% endfor %}
+						{% endfor %}
+						{% for error in form.non_field_errors %}
+							<strong>{{ error }}</strong>
+						{% endfor %}
+						<div class="form_row"><div class="form_label"><label for="{{form.req_frsname.name}}">{{form.req_frsname.label}}</label></div><div>{{form.req_frsname}}</div></div>
+						<div class="form_row"><div class="form_label"><label for="{{form.req_secname.name}}">{{form.req_secname.label}}</label></div><div>{{form.req_secname}}</div></div>
+		 				<div class="form_row"><div class="form_label"><label for="{{form.req_direcci.name}}">{{form.req_direcci.label}}</label></div><div>{{form.req_direcci}}</div></div>
+						<div class="form_row"><div class="form_label"><label for="{{form.req_zipcodg.name}}">{{form.req_zipcodg.label}}</label></div><div>{{form.req_zipcodg}}</div></div>
+						<div class="form_row"><div class="form_label"><label for="{{form.req_correoe.name}}">{{form.req_correoe.label}}</label></div><div>{{form.req_correoe}}</div></div>
+		 				<div class="form_row"><div class="form_label"><label for="{{form.req_fechmsj.name}}">{{form.req_fechmsj.label}}</label></div><div>{{form.req_fechmsj}}</div></div>
+		 				<div class="form_row"><div class="form_label"><label for="{{form.req_mensaje.name}}">{{form.req_mensaje.label}}</label></div><div>{{form.req_mensaje}}</div></div>
+						<br>
+						<br>
+						<div ><button class="icon-database form_submit" type="submit">  Guardar  </button></div>
+						<br>
+					</div>
+				</form>
+			</div>
+		{% endblock context%}

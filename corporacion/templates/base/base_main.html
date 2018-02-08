@@ -8,12 +8,16 @@
  	<link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
  	<link rel="stylesheet" href="{% static 'css/superslides.css' %}">
 {% endcomment %}
- 	<link rel="stylesheet" href="{% static 'css/style_main.css' %}">
- 	<link rel="stylesheet" href="{% static 'css/footer.css' %}">
  	<link rel="stylesheet" href="{% static 'css/header.css' %}">
  	<link rel="stylesheet" href="{% static 'css/fontello.css' %}">
+ 	<link rel="stylesheet" href="{% static 'css/style_main.css' %}">
+ 	<link rel="stylesheet" href="{% static 'css/footer.css' %}">
 
 {% endblock css %}
+
+{% block super %}
+	<script src="js/menu.js"></script>
+{% endblock super %}
 
 {% block content %}
 	<div class="container">
@@ -32,11 +36,7 @@
 {% endblock footer %}
 
 
-
-
-
 {% block js %}
-	<script src="js/menu.js"></script>
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.superslides.js"></script>
 {% endblock js %}

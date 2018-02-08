@@ -70,6 +70,7 @@ class EventoForm(forms.ModelForm):
 
         fields = [
                 'evn_fechaev',
+                'evn_horaevn',
                 'evn_zipcode',
                 'evn_direcci',
                 'evn_localid',
@@ -77,15 +78,17 @@ class EventoForm(forms.ModelForm):
                 'evn_pendien',
                 ]
         labels = {
-                'evn_fechaev': '',
-                'evn_zipcode': '',
-                'evn_direcci': '',
-                'evn_localid': '',
-                'evn_asisten': '',
-                'evn_pendien': '',
+                'evn_fechaev': 'Fecha del evento',
+                'evn_horaevn': 'Hora del evento',
+                'evn_zipcode': 'Lugar (zip-code)',
+                'evn_direcci': 'Dirección',
+                'evn_localid': 'Local',
+                'evn_asisten': 'Asistentes, default=0',
+                'evn_pendien': 'Pendiente(si/no)',
                 }
         widgets = {
-                'evn_fechaev': forms.TextInput(),
+                'evn_fechaev': forms.DateInput(),
+                'evn_fechaev': forms.TimeInput(),
                 'evn_zipcode': forms.TextInput(),
                 'evn_direcci': forms.TextInput(),
                 'evn_localid': forms.TextInput(),
