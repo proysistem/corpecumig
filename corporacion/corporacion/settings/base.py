@@ -49,6 +49,7 @@ LOCAL_APPS = [
     'apps.inicio',
     'apps.users',
     'apps.eventos',
+    'apps.visitantes',
 ]
 
 THIRD_PARTY_APPS = [
