@@ -6,7 +6,7 @@ from django.shortcuts import render
 #    config = None
 
 
-def home(request):
+def IndexView(request):
 
     context = {}
     template = 'inicio/index.html'

@@ -10,19 +10,19 @@
 			<div>Sucursal  {{ request.user.sucursal.id }} : {{ request.user.sucursal }}  </div>
 		</div>
 		<div>
-			<div>UIsuario {{ request.user.username }}</div>
+			<div>Usuario {{ request.user.username }}</div>
 		</div><br>
 		<div>
 			<h1>Aplicaciones</h1>
 		</div><br><br>
 		<div>
-			<td><a class="boton_aplicacion" href="{% url 'inicio:home' %}">Home</a></td>
+			<td><a class="boton_aplicacion" href="{% url 'inicio:iniciar' %}">Home</a></td>
 		</div>
 		<div>
-			<td><a class="boton_aplicacion" href="{% url 'inicio:home' %}">Eventos</a></td>
+			<td><a class="boton_aplicacion" href="{% url 'inicio:iniciar' %}">Eventos</a></td>
 		</div>
 		<div>
-			<td><a class="boton_aplicacion" href="{% url 'inicio:home' %}">Usuarios</a></td>
+			<td><a class="boton_aplicacion" href="{% url 'inicio:iniciar' %}">Usuarios</a></td>
 		</div> <br>
 	</div>
 </aside>

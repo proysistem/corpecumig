@@ -1,12 +1,9 @@
 from django.conf.urls import url
 
-# from apps.inicio.views import IndexView, home
-
-from apps.inicio.views import home, proyecto
+from apps.inicio.views import IndexView, proyecto
 
 
 urlpatterns = [
-    # url(r'^$', IndexView, name='iniciar'),
-    url(r'^$', home, name='home'),
-    url(r'^$', proyecto, name='proyecto'),
+    url(r'^$', IndexView, name='iniciar'),
+    url(r'^IndProy$', proyecto, name='proyecto'),
 ]
