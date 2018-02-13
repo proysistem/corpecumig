@@ -10,7 +10,7 @@ class Zipcodigo(models.Model):
     zip_ciuddet = models.TextField('Ciudad', max_length=35)
 
     def __str__(self):
-        return "%s %s %s %s" % (self.zip_idzipco, self.zip_country, self.zip_estddet, self.zip_ciuddet)
+        return "%s %s %s %s" % (self.zip_country, self.zip_ciuddet, self.zip_estddet, self.zip_idzipco)
 
 
 class Aspirante(models.Model):

@@ -13,6 +13,13 @@ def IndexView(request):
     return render(request, template, context)
 
 
+def nosotros(request):
+
+    context = {}
+    template = 'inicio/nosotros.html'
+    return render(request, template, context)
+
+
 def proyecto(request):
 
     context = {}
