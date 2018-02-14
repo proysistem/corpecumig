@@ -25,3 +25,10 @@ def proyecto(request):
     context = {}
     template = 'inicio/proyecto.html'
     return render(request, template, context)
+
+
+def contacto(request):
+
+    context = {}
+    template = 'inicio/contacto.html'
+    return render(request, template, context)

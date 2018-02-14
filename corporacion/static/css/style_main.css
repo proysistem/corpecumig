@@ -33,6 +33,12 @@ body{
 	position: relative;
 	top: 170px;
 	}
+.back_titulo
+	{
+	width: 100%;
+	margin-top:170px;
+	margin-bottom: -160px;
+	}
 .back_slide.back_image
 	{
 	display: block;
@@ -102,7 +108,9 @@ body{
 	}
 .aside_main a img:hover
 	{
-    background: linear-gradient(90deg, #133F44, #022327);
+	background-color: rgba(31,101,12,0.4);
+	border-bottom: solid 1px #eeddcc;
+	padding: 10px 15px;
 	}
 /*------------------------ Estilos responsive ----------------------- */
 @media(min-width: 768px){

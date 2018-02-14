@@ -1,0 +1,71 @@
+{% extends 'base/base_main.html' %}
+
+{% block title %} Home {% endblock title %}</title>
+
+{% block context%}
+		<div class="content_contact">
+				<section class="form_content">
+					<form  class="formulario" method="POST" enctype="multipart">{% csrf_token %}
+						<h1 class="form_titulo">Contact</h1>
+						<input type="text" name="FirstName" class="form_input" required>
+						<label for="FirstName" class="form_label">First Name</label>
+						<input type="text" name="LastName" class="form_input" required>
+						<label for="LastName" class="form_label">Last Name</label>
+						<input type="text" name="NumPhone" class="form_input" required>
+						<label for="NumPhone" class="form_label">Phone</label>
+						<textarea type="text" name="message" class="form_textarea" required rows="6"></textarea>
+						<label for="message" class="form_labelt">Message</label>
+						<input type="submit" name="sender" class="form_submit" value="Send" >
+					</form>
+				</section>
+				{% comment %}
+				<section class="info_content">
+					<article class="contact_fields">
+						<div class="contact_text">
+							<p><h2>Luis Landscape & Construction LLC</h2>
+							Is a  landscape jobs <br />
+							Department of the State of New York.<br />
+							</p>
+						</div>
+					</article>
+					<article class="contact_fields">
+						<div class="contact_text">
+						    <h2> Contact </h2>
+							<p>
+							Email: luislandscapeconstruction@gmail.com<br />
+							Cell phone: (845) 494-7077<br />
+							Office: (845) 405-9424<br />
+
+							PO BOX 341<br />
+        	    	   		Nanuet, NY. 10954-2446<br />
+        	   			    </p>
+        	   			</div>
+					</article>
+					<article class="contact_fields">
+						<div  class="contact_text">
+							<h2>Social</h2>
+							<div class="footer_sociales">
+								<a class="icon-facebook"  href=""></a><br/>
+								<a class="icon-twitter"   href=""></a><br/>
+								<a class="icon-youtube" href=""></a><br/>
+							</div>
+						</div>
+					</article>
+				</section>
+				{% endcomment %}
+		</div>
+{% endblock context %}
+{% comment %}
+		<section>
+			<article class="banner_us">
+				<div class="content_us"></div>
+				<!--<video src="videos/mensajera.mp4" autoplay loop mute="off" poster="images/barco_carga.jpg">		-->
+				<video src="videos/fondo07.mp4" autoplay loop mute="off" poster="images/barco_carga.jpg">
+			</article>
+		</section>
+
+		<?php include ("footer.php");?> 		<!-- Copia el archivo, parte de la pagina con el FOOTER -->
+		<script src="js/form.js"></script>
+	</body>
+</html>
+{% endcomment %}
