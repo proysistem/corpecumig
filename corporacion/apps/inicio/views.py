@@ -1,6 +1,7 @@
 from django.shortcuts import render
-
-
+from django.views.generic import ListView
+from apps.eventos.models import Evento
+from django.core.urlresolvers import reverse_lazy
 # class IndexView(TemplateView):
 #    template_name = 'inicio/index.html'
 #    config = None
@@ -20,11 +21,13 @@ def nosotros(request):
     return render(request, template, context)
 
 
-def proyecto(request):
-
-    context = {}
-    template = 'inicio/proyecto.html'
-    return render(request, template, context)
+class proyecto(ListView):
+    """Listado de Eventos"""
+    model = Evento
+    template_name = 'inicio/proyecto.html'
+    ordering = ['pk']
+    paginate_by = 15
+    success_url = reverse_lazy('inicio:iniciar')
 
 
 def contacto(request):

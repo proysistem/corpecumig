@@ -23,7 +23,7 @@ class Sol_Nuevo(CreateView):
     model = Solicitud
     form_class = SolicitudForm
     template_name = 'visitantes/Sol_New.html'
-    success_url = reverse_lazy('inicio:home')
+    success_url = reverse_lazy('inicio:iniciar')
 
 # ========  A  S  P  I  R  A  N  T  E  S  =========== #
 
@@ -33,7 +33,7 @@ class Asp_Nuevo(CreateView):
     model = Aspirante
     form_class = AspiranteForm
     template_name = 'visitantes/Asp_New.html'
-    success_url = reverse_lazy('inicio:home')
+    success_url = reverse_lazy('inicio:iniciar')
 
 # ======== M  E  N  S  A  J  E  =========== #
 

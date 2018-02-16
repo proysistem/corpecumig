@@ -28,7 +28,7 @@ body{
 	}
 .back_slide
 	{
-	display: flex;
+	background: url(/static/images/pixel-1.png);
 	width: 100%;
 	position: relative;
 	top: 170px;
@@ -97,7 +97,20 @@ body{
 		font-size: 1.2em;
 		}
 	}
-
+.group    /* Aplica al grupo de importante y pulse */
+	{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	}
+.group_orizont-1    /* Aplica a importante */
+	{
+	width: 70%;
+	}
+.group_orizont-2   /* Aplica a pulse*/
+	{
+	width: 25%;
+	}
 .aside_main
 	{
 	display: block;
@@ -132,7 +145,10 @@ body{
 	}
 }
 @media(min-width: 1024px){
-
+	.back_slide
+	{
+	display: flex;
+	}
  	.form_columns
 	{
 	padding: 0 2% 0 2%;
