@@ -5,24 +5,27 @@
 {% block context%}
 			<section class="fondo_page">
 				<article class="back_slide">
-					<div id="back_image">
+					<div>
+						<div><a href="{% url 'inicio:propuesta' %}"><img class="align_itm_right" src="static/images/enter.jpg"></a></div>
 						<div><img class="align_itm_right" src="static/images/atencion.png"></div>
 						<div class="group">
-							<div class="group_orizont-1"><img src="static/images/importante.png"></div><div class="group_orizont-2"><a href="{% url 'visitantes:sol_new' %}"><img src="static/images/pulse.png"></a></div>
+							<div class="group_orizont-1"><img src="static/images/importante.png"></div>
+							<div class="group_orizont-2"><a href="{% url 'visitantes:sol_new' %}"><img src="static/images/pulse.png"></a></div>
+							<div class="group_orizont-1"><img src="static/images/cuenta.jpg"></div>
 						</div>
 					</div>
 					<div>
 						<div><h1>Calendario de exposiciones del proyecto</h1></div>
 						<table border="1" >
 							<thead>
-							 	<tr color="#:000066">
-							 		<th class="head_tab">Fecha del evento</th>
-							 		<th class="head_tab">Hora del evento</th>
-							 		<th class="head_tab">Zipcodigo</th>
-							 		<th class="head_tab">Dirección</th>
-							 		<th class="head_tab">Nombre del local</th>
-							 		<th class="head_tab">Asistieron</th>
-							 		<th class="head_tab">Status</th>
+							 	<tr>
+							 		<th class="color_780827">Fecha del evento</th>
+							 		<th class="color_780827">Hora del evento</th>
+							 		<th class="color_780827">Zipcodigo</th>
+							 		<th class="color_780827">Dirección</th>
+							 		<th class="color_780827">Nombre del local</th>
+							 		<th class="color_780827">Asistieron</th>
+							 		<th class="color_780827">Status</th>
 							 	</tr>
 							</thead>
 							<tbody border="0">

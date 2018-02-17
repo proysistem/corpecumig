@@ -30,6 +30,13 @@ class proyecto(ListView):
     success_url = reverse_lazy('inicio:iniciar')
 
 
+def propuesta(request):
+
+    context = {}
+    template = 'inicio/propuesta.html'
+    return render(request, template, context)
+
+
 def contacto(request):
 
     context = {}

@@ -24,7 +24,7 @@ body{
 .fondo_page
 	{
 	width: 100%;
-	height: 84vh;
+	height: 100vh;
 	}
 .back_slide
 	{
@@ -100,16 +100,17 @@ body{
 .group    /* Aplica al grupo de importante y pulse */
 	{
 	width: 100%;
+	font-size: 1.2em;
 	display: flex;
 	justify-content: space-between;
 	}
 .group_orizont-1    /* Aplica a importante */
 	{
-	width: 70%;
+	object-position: left;
 	}
 .group_orizont-2   /* Aplica a pulse*/
 	{
-	width: 25%;
+	width: 08%;
 	}
 .aside_main
 	{
@@ -124,6 +125,12 @@ body{
 	background-color: rgba(31,101,12,0.4);
 	border-bottom: solid 1px #eeddcc;
 	padding: 10px 15px;
+	}
+.color_780827
+	{
+	background: linear-gradient(#510909, #881F1F, #110903); /* Standard syntax */
+	color: #FFF;
+	padding: 5px;
 	}
 /*------------------------ Estilos responsive ----------------------- */
 @media(min-width: 768px){
