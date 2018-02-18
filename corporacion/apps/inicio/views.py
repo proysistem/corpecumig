@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import CreateView, ListView
 from apps.eventos.models import Evento
 from django.core.urlresolvers import reverse_lazy
-# class IndexView(TemplateView):
+from apps.visitantes.models import Contacto
+from apps.visitantes.forms import ContactoForm
 #    template_name = 'inicio/index.html'
 #    config = None
 
@@ -37,8 +38,12 @@ def propuesta(request):
     return render(request, template, context)
 
 
-def contacto(request):
+# ========  C  O  N  T  A  C  T  O  =========== #
 
-    context = {}
-    template = 'inicio/contacto.html'
-    return render(request, template, context)
+
+class Cnt_Nuevo(CreateView):
+    """Crear un Contacto """
+    model = Contacto
+    form_class = ContactoForm
+    template_name = 'inicio/Cnt_New.html'
+    success_url = reverse_lazy('inicio:contacto')

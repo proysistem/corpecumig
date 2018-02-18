@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^Asp_Nuevo/$',                Asp_Nuevo.as_view(), name='asp_new'),
     url(r'^Evn_Panel',                  Evn_Lista.as_view(), name='evn_panel'),
     url(r'^Msg_Nuevo/$',                Msg_Nuevo.as_view(), name='msg_new'),
+
 ]
