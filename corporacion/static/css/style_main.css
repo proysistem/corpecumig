@@ -39,6 +39,14 @@ body{
 	margin-top:170px;
 	margin-bottom: -160px;
 	}
+.back_sub-titulo
+	{
+	font-size: 2em;
+	color:#FFF;
+	text-align: center;
+	margin: 5px auto;
+	padding: 5px;
+	}
 .back_slide.back_image
 	{
 	display: block;
