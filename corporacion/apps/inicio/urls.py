@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from apps.inicio.views import IndexView, proyecto, propuesta, nosotros, Cnt_Nuevo
+from .views import IndexView, proyecto, propuesta, nosotros, Cnt_Nuevo
 
 
 urlpatterns = [

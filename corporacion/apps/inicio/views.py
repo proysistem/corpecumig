@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.views.generic import CreateView, ListView
 from apps.eventos.models import Evento
 from django.core.urlresolvers import reverse_lazy
-from apps.visitantes.models import Contacto
-from apps.visitantes.forms import ContactoForm
+from .models import Contacto
+from .forms import ContactoForm
 #    template_name = 'inicio/index.html'
 #    config = None
 
