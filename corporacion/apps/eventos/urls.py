@@ -3,7 +3,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from apps.eventos.views import (AspLista, AspNuevo, AspView, AspEdita, AspDelet, EvnLista, EvnNuevo, EvnView, EvnEdita,
                                 EvnDelet, MsgLista, MsgNuevo, MsgView, MsgEdita, MsgDelet, ZipLista, ZipNuevo, ZipView,
-                                ZipEdita, ZipDelet)
+                                ZipEdita, ZipDelet, AstLista, AstNuevo, AstView, AstEdita, AstDelet)
 
 
 urlpatterns = [
@@ -14,6 +14,12 @@ urlpatterns = [
     url(r'^AspConsulta/(?P<pk>\d+)/$', AspView.as_view(),  name='asp_view'),
     url(r'^AspEdita/(?P<pk>\d+)/$',    AspEdita.as_view(), name='asp_edit'),
     url(r'^AspElimina/(?P<pk>\d+)/$',  AspDelet.as_view(), name='asp_delet'),
+
+    url(r'^AstPanel',                  AstLista.as_view(), name='ast_panel'),
+    url(r'^AstNuevo/$',                AstNuevo.as_view(), name='ast_new'),
+    url(r'^AstConsulta/(?P<pk>\d+)/$', AstView.as_view(),  name='ast_view'),
+    url(r'^AstEdita/(?P<pk>\d+)/$',    AstEdita.as_view(), name='ast_edit'),
+    url(r'^AstElimina/(?P<pk>\d+)/$',  AstDelet.as_view(), name='ast_delet'),
 
     url(r'^EvnPanel',                  EvnLista.as_view(), name='evn_panel'),
     url(r'^EvnNuevo/$',                EvnNuevo.as_view(), name='evn_new'),

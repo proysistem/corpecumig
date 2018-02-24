@@ -1,8 +1,8 @@
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, ListView
-from .forms import ZipcodigoForm, MensajeForm, EventoForm, AspiranteForm
+from .forms import ZipcodigoForm, MensajeForm, EventoForm, AspiranteForm, AsistenteForm
 
-from apps.eventos.models import Zipcodigo, Aspirante, Evento, Mensaje
+from apps.eventos.models import Zipcodigo, Aspirante, Asistente, Evento, Mensaje
 
 # ========Z  I  P  C  O  D  I  G  O  =========== #
 
@@ -164,3 +164,44 @@ class AspDelet(DeleteView):
     form_class = AspiranteForm
     template_name = 'eventos/Asp_Delet.html'
     success_url = reverse_lazy('eventos:asp_panel')
+
+
+# ========  A  S  I  S  T  E  N  T  E  S  =========== #
+
+
+class AstLista(ListView):
+    """Listado de Asistente"""
+    model = Asistente
+    template_name = 'eventos/Ast_Panel.html'
+    ordering = ['pk']
+    paginate_by = 15
+
+
+class AstView(DetailView):
+    """Listado de Asistente"""
+    template_name = 'eventos/Ast_View.html'
+    model = Asistente
+
+
+class AstNuevo(CreateView):
+    """Crear Asistente"""
+    model = Asistente
+    form_class = AsistenteForm
+    template_name = 'eventos/Ast_New.html'
+    success_url = reverse_lazy('eventos:ast_panel')
+
+
+class AstEdita(UpdateView):
+    """Listado de Asistentes"""
+    model = Asistente
+    form_class = AsistenteForm
+    template_name = 'eventos/Ast_Edit.html'
+    success_url = reverse_lazy('eventos:ast_panel')
+
+
+class AstDelet(DeleteView):
+    """Listado de Asistentes"""
+    model = Asistente
+    form_class = AsistenteForm
+    template_name = 'eventos/Ast_Delet.html'
+    success_url = reverse_lazy('eventos:ast_panel')

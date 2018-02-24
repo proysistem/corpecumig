@@ -27,13 +27,10 @@
 	height: 155px;
 	width:	70%;
 	}
-/*.icon-menu
-	{*/
 .icon-th-list{
 	display: block;
 	margin: 120px 0;
 	}
-/*.icon-menu{*/
 .icon-th-list{
 	background: #FBA919;
 	border-radius: 5px;
@@ -85,8 +82,6 @@
 .mostrar
 	{
 	left: 0;
-/*	position: relative;
-	z-index: 100;*/
 	}
 /*------------------------ Estilos del boton de login ----------------------- */
 .login-content
@@ -133,7 +128,7 @@
 
 }
 @media(min-width: 1024px){
-	.logo
+.logo
 	{
 	display: block;
 	width:	35%;

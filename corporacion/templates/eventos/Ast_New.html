@@ -1,0 +1,61 @@
+{% extends 'base/base_main.html' %}
+
+{% block title %} Asistentes {% endblock title %}</title>
+
+{% block context%}
+		<div class="content_contact">
+				<section class="form_content">
+					<form  class="formulario" method="POST" enctype="multipart">{% csrf_token %}
+						<div class="group"><h1 class="form_titulo">Asistire al evento</h1>
+							<a class="icon-reply crea_boton txt_align_right" href="{% url 'inicio:proyecto' %}">Volver</a>
+						</div>
+
+							{% if form.errors %}
+
+								<div class="form_errors" role="alert">
+									{{ form.errors }}
+								</div>
+
+							{% endif %}
+
+							{% for field in form %}
+								{% for error in field.errors %}
+									<strong>{{ field.label }}</strong>: {{ error }}<br>
+								{% endfor %}
+							{% endfor %}
+
+							{% for error in form.non_field_errors %}
+								<strong>{{ error }}</strong>
+							{% endfor %}
+
+
+							{% if nuevo_mov.errors %}
+
+								<div class="form_errors" role="alert">
+									{{ nuevo_mov.errors }}
+								</div>
+
+							{% endif %}
+
+							{% for field in nuevo_mov %}
+								{% for error in field.errors %}
+									<strong>{{ field.label }}</strong>: {{ error }}<br>
+								{% endfor %}
+							{% endfor %}
+
+							{% for error in nuevo_mov.non_field_errors %}
+								<strong>{{ error }}</strong>
+							{% endfor %}
+
+						<div><div><label for="{{form.ast_frsname.name}}">{{form.ast_frsname.label}}</label></div><div>{{form.ast_frsname}}</div></div>
+						<div><div><label for="{{form.ast_lasname.name}}">{{form.ast_lasname.label}}</label></div><div>{{form.ast_lasname}}</div></div>
+						<div><div><label for="{{form.ast_direcci.name}}">{{form.ast_direcci.label}}</label></div><div>{{form.ast_direcci}}</div></div>
+						<div><div><label for="{{form.ast_zipcodg.name}}">{{form.ast_zipcodg.label}}</label></div><div>{{form.ast_zipcodg}}</div></div>
+						<div><div><label for="{{form.ast_celular.name}}">{{form.ast_celular.label}}</label></div><div>{{form.ast_celular}}</div></div>
+						<div><div><label for="{{form.ast_correoe.name}}">{{form.ast_correoe.label}}</label></div><div>{{form.ast_correoe}}</div></div>
+						<div><div><label for="{{form.ast_categor.name}}">{{form.ast_categor.label}}</label></div><div>{{form.ast_categor}}</div></div>
+						<div ><button class="icon-mail form_submit" type="submit">  Send  </button></div>
+					</form>
+				</section>
+		</div>
+{% endblock context %}

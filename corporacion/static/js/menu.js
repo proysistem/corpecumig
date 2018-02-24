@@ -1,8 +1,7 @@
-var btnMenu = document.getElementById('btn-menu');
-var navMenu = document.getElementById('nav');
 
-alett("estoy entrando");
+var btnMenu = document.getElementById('btn-menu');
+var nav = document.getElementById('nav');
 
 btnMenu.addEventListener('click', function(){
-	nav.classList.toggle('mostrar');
+     nav.classList.toggle('mostrar');
 })

@@ -1,5 +1,5 @@
 from django import forms
-from apps.eventos.models import Zipcodigo, Aspirante, Evento, Mensaje
+from apps.eventos.models import Zipcodigo, Aspirante, Asistente, Evento, Mensaje
 
 
 class ZipcodigoForm(forms.ModelForm):
@@ -146,4 +146,38 @@ class AspiranteForm(forms.ModelForm):
                 'asp_imgclte': forms.TextInput(),
                 'asp_rgunico': forms.TextInput(),
                 'asp_categor': forms.TextInput(),
+                 }
+
+
+class AsistenteForm(forms.ModelForm):
+
+    class Meta:
+        model = Asistente
+
+        fields = [
+                'ast_frsname',
+                'ast_lasname',
+                'ast_direcci',
+                'ast_zipcodg',
+                'ast_celular',
+                'ast_correoe',
+                'ast_categor',
+                ]
+        labels = {
+                'ast_frsname': 'Nombre',
+                'ast_lasname': 'Apellido',
+                'ast_direcci': 'Dirección',
+                'ast_zipcodg': 'Zip-código',
+                'ast_celular': 'Celular',
+                'ast_correoe': 'E-mail',
+                'ast_categor': 'Status (0/1)',
+                }
+        widgets = {
+                'ast_frsname': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
+                'ast_lasname': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
+                'ast_direcci': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
+                'ast_zipcodg': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
+                'ast_celular': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
+                'ast_correoe': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
+                'ast_categor': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
                  }

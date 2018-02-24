@@ -32,6 +32,19 @@ class Aspirante(models.Model):
         return "%s %s %s %s" % (self.asp_frsnameo, self.asp_midname, self.asp_secmanp, self.asp_secmanm)
 
 
+class Asistente(models.Model):
+    ast_frsname = models.CharField('Primer Nombre', max_length=25)
+    ast_lasname = models.CharField('Segundo Nombre', max_length=25)
+    ast_direcci = models.CharField('Direccion Domiciliaria', max_length=50)
+    ast_zipcodg = models.ForeignKey(Zipcodigo, null=True, blank=True)
+    ast_celular = models.CharField('Celular', max_length=15, blank=True)
+    ast_correoe = models.EmailField('e-mail')
+    ast_categor = models.IntegerField(default=0)
+
+    def __str__(self):
+        return "%s %s" % (self.ast_frsname, self.ast_lasname)
+
+
 class Evento(models.Model):
     evn_fechaev = models.DateField('Fecha deEvento')
     evn_horaevn = models.TimeField('Hora del evento')

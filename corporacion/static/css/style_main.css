@@ -177,3 +177,19 @@ body{
 	font-size: 2.2em;
 	}
 }
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - Seting standard - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.align_tex_right {text-align: right;}
+.align_tex_letf {text-align: left;}
+.align_tex_center {text-align: center;}
+
+.align_itm_right {justify-content: flex-end;}
+.align_itm_letf {align-items: flex_start;}
+.align_itm_center {align-items: flex_center;}
+
+.font_little{font-size: 10px; height: 15px;}
+.font_small{font-size: small;}
+.font_medium{font-size: medium;}
+.font_large{font-size: large;}
