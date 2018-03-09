@@ -3,19 +3,10 @@
 {% block title %} Home {% endblock title %}</title>
 
 {% block context%}
-			<section class="fondo_page">
-				<article class="back_slide">
-					<div>
-						<div><a href="{% url 'inicio:propuesta' %}"><img class="align_itm_right" src="static/images/enter.jpg"></a></div>
-						<div><img class="align_itm_right" src="static/images/atencion.png"></div>
-						<div class="group">
-							<div class="group_orizont-1"><img src="static/images/importante.png"><a href="{% url 'eventos:ast_new' %}"><img src="static/images/opcional.jpg"></a></div>
-							<div class="group_orizont-2"><a href="{% url 'visitantes:sol_new' %}"><img src="static/images/pulse.png"></a></div>
-							<div class="group_orizont-1"><img src="static/images/cuenta.jpg"></div>
-						</div>
-					</div>
-					<div>
-						<div><h1>Calendario de exposiciones del proyecto</h1></div>
+			<section class="proyecto_content">
+				<article class="proyecto_subcont">
+					<div class="proyecto_columas">
+						<div class="proyecto-titulo"><h1>Calendario de exposiciones del proyecto</h1></div>
 						<table border="1" >
 							<thead>
 							 	<tr>
@@ -61,6 +52,21 @@
 							</ul>
 						</div>
 					</div>
+
+					<div class="proyecto_columas">
+						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						<a href="{% url 'inicio:propuesta' %}"><img class="align_itm_right" src="static/images/enter.jpg"></a>
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+					<div><img class="proyecto_columas" src="static/images/atencion.png"></div>
+					<div class="proyecto_columas wraps"><img src="static/images/importante.png"><a href="{% url 'visitantes:sol_new' %}"><img src="static/images/pulse.png"></a></div>
+					<div class="proyecto_columas"><a href="{% url 'eventos:ast_new' %}"><img src="static/images/opcional.jpg"></a></div>
+					<div class="proyecto_columas"><img src="static/images/cuenta.jpg"></div>
 				</article>
 			</section>
 {% endblock context %}

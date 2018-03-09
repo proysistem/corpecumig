@@ -24,14 +24,14 @@ body{
 .fondo_page
 	{
 	width: 100%;
-	height: 100vh;
+	height: all;
 	}
 .back_slide
 	{
-	background: url(/static/images/pixel-1.png);
+	background: url(/static/images/pixel-2.png);
 	width: 100%;
-	position: relative;
 	top: 170px;
+	position: relative;
 	}
 .back_titulo
 	{
@@ -65,6 +65,7 @@ body{
 	background-color: green;
 	width: 100%;
 	}
+/*
 .info_content
 	{
 	align-content: center;
@@ -75,6 +76,7 @@ body{
 	width: 99%;
 	z-index: 3;
 	}
+*/
 .info_columna
 	{
 	background-color: rgba(108,108,101,0.9);
@@ -112,9 +114,14 @@ body{
 	display: flex;
 	justify-content: space-between;
 	}
+.group_column
+	{
+	color: #FFF;
+	}
 .group_orizont-1    /* Aplica a importante */
 	{
 	object-position: left;
+	background-color: linear-gradient(#000000, #58A2B4); /* Standard syntax */
 	}
 .group_orizont-2   /* Aplica a pulse*/
 	{
@@ -139,6 +146,29 @@ body{
 	background: linear-gradient(#510909, #881F1F, #110903); /* Standard syntax */
 	color: #FFF;
 	padding: 5px;
+	}
+.width_760 {width: 7.67%;}
+.width_003 {width: 003%;}
+.width_005 {width: 005%;}
+.width_010 {width: 010%;}
+.width_015 {width: 015%;}
+.width_020 {width: 020%;}
+.width_025 {width: 025%;}
+.width_030 {width: 030%;}
+.width_035 {width: 035%;}
+.width_040 {width: 040%;}
+.width_045 {width: 045%;}
+.width_050 {width: 050%;}
+.width_090 {width: 090%;}
+.width_095 {width: 095%;}
+.width_099 {width: 099%;}
+.width_100 {width: 100%;}
+
+
+
+.wraps
+	{
+	display: inline-flex;
 	}
 /*------------------------ Estilos responsive ----------------------- */
 @media(min-width: 768px){

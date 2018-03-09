@@ -35,9 +35,9 @@
 							<td class="columns_tab">{{ var_evnfield.evn_asisten }} </td>
 							<td class="columns_tab">{{ var_evnfield.evn_pendien }} </td>
 
-							<td class="columns_tab"><a class="icon-eye botones"   href="{% url 'eventos:evnview'  var_evnfield.pk %}"></a></td>
-							<td class="columns_tab"><a class="icon-edit botones"  href="{% url 'eventos:evnedit'  var_evnfield.pk %}"></a></td>
-							<td class="columns_tab"><a class="icon-trash botones" href="{% url 'eventos:evndelet' var_evnfield.pk %}"></a></td>
+							<td class="columns_tab"><a class="icon-eye botones"   href="{% url 'eventos:evn_view'  var_evnfield.pk %}"></a></td>
+							<td class="columns_tab"><a class="icon-edit botones"  href="{% url 'eventos:evn_edit'  var_evnfield.pk %}"></a></td>
+							<td class="columns_tab"><a class="icon-trash botones" href="{% url 'eventos:evn_delet' var_evnfield.pk %}"></a></td>
 						</tr>
 						{% endfor %}
 						{% else %}

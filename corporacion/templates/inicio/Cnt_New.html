@@ -1,0 +1,58 @@
+{% extends 'base/base_main.html' %}
+
+{% block title %} Contacto {% endblock title %}</title>
+
+{% block context%}
+		<div class="content_contact">
+				<section class="form_content">
+					<form  class="formulario" method="POST" enctype="multipart">{% csrf_token %}
+						<div class="group"><div><h1 class="form_titulo">Contact</h1></div><div class="align_tex_center">{{form.cnt_fechmsj}}</div></div>
+
+
+						{% if form.errors %}
+
+							<div class="form_errors" role="alert">
+								{{ form.errors }}
+							</div>
+
+						{% endif %}
+
+						{% for field in form %}
+							{% for error in field.errors %}
+								<strong>{{ field.label }}</strong>: {{ error }}<br>
+							{% endfor %}
+						{% endfor %}
+
+						{% for error in form.non_field_errors %}
+							<strong>{{ error }}</strong>
+						{% endfor %}
+
+
+						{% if nuevo_mov.errors %}
+
+							<div class="form_errors" role="alert">
+								{{ nuevo_mov.errors }}
+							</div>
+
+						{% endif %}
+
+						{% for field in nuevo_mov %}
+							{% for error in field.errors %}
+								<strong>{{ field.label }}</strong>: {{ error }}<br>
+							{% endfor %}
+						{% endfor %}
+
+						{% for error in nuevo_mov.non_field_errors %}
+							<strong>{{ error }}</strong>
+						{% endfor %}
+
+						<div><div><label for="{{form.cnt_frsname.name}}">{{form.cnt_frsname.label}}</label></div><div>{{form.cnt_frsname}}</div></div>
+						<div><div><label for="{{form.cnt_lasname.name}}">{{form.cnt_lasname.label}}</label></div><div>{{form.cnt_lasname}}</div></div>
+						<div><div><label for="{{form.cnt_correoe.name}}">{{form.cnt_correoe.label}}</label></div><div>{{form.cnt_correoe}}</div></div>
+						<div><div><label for="{{form.cnt_telefon.name}}">{{form.cnt_telefon.label}}</label></div><div>{{form.cnt_telefon}}</div></div>
+						<div><div><label for="{{form.cnt_mensaje.name}}">{{form.cnt_mensaje.label}}</label></div><div>{{form.cnt_mensaje}}</div></div>
+						<div ><button class="icon-mail form_submit" type="submit">  Send  </button></div>
+					</form>
+				</section>
+		</div>
+{% endblock context %}
