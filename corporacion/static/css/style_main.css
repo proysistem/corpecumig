@@ -164,13 +164,27 @@ body{
 .width_099 {width: 099%;}
 .width_100 {width: 100%;}
 
-
-
-.wraps
+.flex_display
+	{
+	display: flex;
+	}
+.flex_flow
+	{
+	row wrap;
+	}
+.flex_content
+	{
+	justify-content: center;
+	}
+.flex_wraps
 	{
 	display: inline-flex;
 	}
-/*------------------------ Estilos responsive ----------------------- */
+.flex_align
+	{
+	align-content: stretch;
+	}
+/*------------------------ Estilos responsive design ----------------------- */
 @media(min-width: 768px){
 	.form_columns
 	{

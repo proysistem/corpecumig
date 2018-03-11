@@ -3,6 +3,10 @@ from .models import Solicitud
 
 
 class SolicitudForm(forms.ModelForm):
+    req_fechmsj = forms.DateTimeField(
+        initial=localtime(now()).date(),
+        widget=forms.DateInput(attrs={"type": "date"}, format='%Y-%m-%d',)
+    )
 
     class Meta:
         model = Solicitud
@@ -13,10 +17,9 @@ class SolicitudForm(forms.ModelForm):
                  'req_direcci',
                  'req_zipcodg',
                  'req_correoe',
-                 'req_fechmsj',
+                 # 'req_fechmsj',
                  # 'req_descrip',
                  'req_mensaje',
-                 # 'req_requier',
                  ]
 
         labels = {
@@ -25,7 +28,7 @@ class SolicitudForm(forms.ModelForm):
                  'req_direcci':  'Dirección',
                  'req_zipcodg':  'Zip-código',
                  'req_correoe':  'E-mail',
-                 'req_fechmsj':  'Fecha (mm/dd/yyyy)',
+                 # 'req_fechmsj':  'Fecha (mm/dd/yyyy)',
                  # 'req_descrip':  'Descipción',
                  'req_mensaje':  'Mensaje',
                  }
@@ -36,7 +39,7 @@ class SolicitudForm(forms.ModelForm):
                  'req_direcci': forms.TextInput(),
                  'req_zipcodg': forms.TextInput(),
                  'req_correoe': forms.TextInput(),
-                 'req_fechmsj': forms.DateInput(),
+                 # 'req_fechmsj': forms.DateInput(),
                  # 'req_descrip': forms.TextInput(),
                  'req_mensaje': forms.Textarea(),
                 }

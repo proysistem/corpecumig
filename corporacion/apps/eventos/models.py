@@ -46,7 +46,7 @@ class Asistente(models.Model):
 
 
 class Evento(models.Model):
-    evn_fechaev = models.DateField('Fecha deEvento')
+    evn_fechaev = models.DateTimeField(auto_now_add=True, editable=False)
     evn_horaevn = models.TimeField('Hora del evento')
     evn_zipcode = models.ForeignKey(Zipcodigo)
     evn_direcci = models.TextField('Dirección', max_length=75)
@@ -59,7 +59,7 @@ class Evento(models.Model):
 
 
 class Mensaje(models.Model):
-    eml_fechmsj = models.DateField('Fecha de Mensaje')
+    eml_fechmsj = models.DateTimeField(auto_now_add=True, editable=False)
     eml_descrip = models.EmailField('email')
     eml_mensaje = models.TextField('Mensaje')
     eml_requier = models.BooleanField(default=False)

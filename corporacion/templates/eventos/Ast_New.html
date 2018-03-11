@@ -6,7 +6,7 @@
 		<div class="content_contact">
 				<section class="form_content">
 					<form  class="formulario" method="POST" enctype="multipart">{% csrf_token %}
-						<div class="group"><h1 class="form_titulo">Asistire al evento</h1>
+						<div class="group"><h1 class="form_titulo">Asistiré al evento</h1>
 							<a class="icon-reply crea_boton txt_align_right" href="{% url 'inicio:proyecto' %}">Volver</a>
 						</div>
 
@@ -54,6 +54,7 @@
 						<div><div><label for="{{form.ast_celular.name}}">{{form.ast_celular.label}}</label></div><div>{{form.ast_celular}}</div></div>
 						<div><div><label for="{{form.ast_correoe.name}}">{{form.ast_correoe.label}}</label></div><div>{{form.ast_correoe}}</div></div>
 						<div><div><label for="{{form.ast_categor.name}}">{{form.ast_categor.label}}</label></div><div>{{form.ast_categor}}</div></div>
+
 						<div ><button class="icon-mail form_submit" type="submit">  Send  </button></div>
 					</form>
 				</section>

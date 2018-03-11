@@ -32,12 +32,14 @@
 							<td class="columns_tab">{{ var_evnfield.ast_celular }} </td>
 							<td class="columns_tab">{{ var_evnfield.ast_correoe }} </td>
 							<td class="columns_tab">{{ var_evnfield.ast_categor }} </td>
+
 {% comment %}
 					 		<th class="head_tab" colspan="3">Opción</th>
 							<td class="columns_tab"><a class="icon-eye botones"   href="{% url 'eventos:evnview'  var_evnfield.pk %}"></a></td>
 							<td class="columns_tab"><a class="icon-edit botones"  href="{% url 'eventos:evnedit'  var_evnfield.pk %}"></a></td>
 							<td class="columns_tab"><a class="icon-trash botones" href="{% url 'eventos:evndelet' var_evnfield.pk %}"></a></td>
 {% endcomment %}
+
 						</tr>
 						{% endfor %}
 						{% else %}

@@ -7,7 +7,7 @@ class Solicitud(models.Model):
     req_direcci = models.CharField('Dirección Domiciliaria', max_length=50)
     req_zipcodg = models.CharField('Código postal', null=True, blank=True, max_length=10)
     req_correoe = models.EmailField('e-mail')
-    req_fechmsj = models.DateField('Fecha de Mensaje')
+    req_fechmsj = models.DateTimeField(auto_now_add=True, editable=False)
     req_descrip = models.TextField('Titulo', max_length=25, default='Solicito exposición')
     req_mensaje = models.CharField('Mensaje', max_length=220)
     req_requier = models.BooleanField(default=True)

@@ -10,6 +10,7 @@
 			<div>
 				<form method="POST" enctype="multipart">{% csrf_token %}
 					<div class="form_content">
+
 						<div class="form_titulo"><h1>Modifica Eventos</h1></div>
 						<div class="form_esc">
 							<a class="icon-cancel" href="{% url 'eventos:evn_panel' %}"></a>
@@ -19,6 +20,7 @@
 								{{ form.error }}
 							</div>
 						{% endif %}
+
 						<div class="form_row"><div class="form_label"><label for="{{form.evn_fechaev.name}}">{{form.evn_fechaev.label}}</label></div><div> {{form.evn_fechaev}}</div></div>
 						<div class="form_row"><div class="form_label"><label for="{{form.evn_zipcode.name}}">{{form.evn_zipcode.label}}</label></div><div> {{form.evn_zipcode}}</div></div>
 						<div class="form_row"><div class="form_label"><label for="{{form.evn_direcci.name}}">{{form.evn_direcci.label}}</label></div><div> {{form.evn_direcci}}</div></div>
@@ -28,6 +30,7 @@
 						<br><br>
 						<div ><button class="icon-database form_submit" type="submit">  Guardar  </button></div>
 						<br>
+
 					</div>
 				</form>
 			</div>

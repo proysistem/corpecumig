@@ -5,9 +5,9 @@
 {% block context%}
 			<section class="proyecto_content">
 				<article class="proyecto_subcont">
-					<div class="proyecto_columas">
+					<div class="proyecto_columns">
 						<div class="proyecto-titulo"><h1>Calendario de exposiciones del proyecto</h1></div>
-						<table border="1" >
+						<table border="1" class="proyecto_colitms flex_content" >
 							<thead>
 							 	<tr>
 							 		<th class="color_780827">Fecha del evento</th>
@@ -37,7 +37,7 @@
 								{% endif %}
 							</tbody>
 						</table>
-						<div class="page_content">
+						<div class="proyecto_colitms">
 							<ul class="pager_botons">
 								<li>
 									{% if page_obj.has_previous %}
@@ -53,20 +53,24 @@
 						</div>
 					</div>
 
-					<div class="proyecto_columas">
-						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					<div class="proyecto_columns flex_content">
+						<p class="proyecto_colitms"> Es importante que verifique la propuesta. Dele un click en la imagen y accese a la información expuesta.
 						<a href="{% url 'inicio:propuesta' %}"><img class="align_itm_right" src="static/images/enter.jpg"></a>
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 						</p>
 					</div>
-					<div><img class="proyecto_columas" src="static/images/atencion.png"></div>
-					<div class="proyecto_columas wraps"><img src="static/images/importante.png"><a href="{% url 'visitantes:sol_new' %}"><img src="static/images/pulse.png"></a></div>
-					<div class="proyecto_columas"><a href="{% url 'eventos:ast_new' %}"><img src="static/images/opcional.jpg"></a></div>
-					<div class="proyecto_columas"><img src="static/images/cuenta.jpg"></div>
+					<div class="proyecto_columns  flex_content">
+						<div class"proyecto_colitms"><img src="static/images/atencion.png"></div>
+					</div>
+					<div class="proyecto_columns flex_display flex_flow">
+						<div class"proyecto_colitms"><img src="static/images/importante.png"></div><div class"proyecto_colitms"><a href="{% url 'visitantes:sol_new' %}"><img src="static/images/pulse.png"></a></div>
+					</div>
+					<div class="proyecto_columns  flex_content">
+						<div class"proyecto_colitms"><a href="{% url 'eventos:ast_new' %}"><img src="static/images/opcional.jpg"></a></div>
+					</div>
+					<div class="proyecto_columns">
+						<div class"proyecto_colitms"><img src="static/images/cuenta.jpg"></div>
+					</div>
 				</article>
 			</section>
 {% endblock context %}

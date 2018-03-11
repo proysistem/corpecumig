@@ -12,7 +12,7 @@
 	margin: auto;
 	width: 99%;
  	}
-.content   /*   Contenedor de todo el contexto de la web (cabeceras y lienzo para listados y views, etc.) */
+.content   /*   Contenedor de todo el contexto de la web (cabeceras y lienzo para listados y views, etc.)  */
 	{
 	display: wrap;
 	position: relative;

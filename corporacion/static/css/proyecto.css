@@ -2,33 +2,38 @@
 
 .proyecto_content
 	{
-	display: ruby-base-container;
 	background: url(/static/images/pixel-2.png);
+	display: ruby-base-container;
 	margin-top: 170px;
 	}
 .proyecto_subcont
 	{
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	position: relative;
-	color: #FFF;
-	}
-.proyecto_columas
-	{
-/*	justify-content: space-between;  */
-	background: linear-gradient(#0D0D0D, #3C555B); /* Standard syntax */
-	margin: 15px auto;
+	background-color: rgba(9,13,19,0.9); /* Standard syntax */
 	border: 1px solid rgba(255,255,255,0.9);
+	color: #FFF;
+	margin: 160px 0 45px 0;
+	position: relative;
+	width: 100%;
+	}
+.proyecto_columns
+	{
+	border: 1px solid rgba(255,255,255,0.9);
+	width: 100%;
+  	padding: 10px;
+    }
+.proyecto_colitms
+	{
+	margin: 25px auto;
 	padding: 15px;
+/*	justify-content: space-between;*/
 	}
 .proyecto-titulo
 	{
-	font-size: 2em;
 	color:#FFF;
-	text-align: center;
+	font-size: 2em;
 	margin: 20px auto;
 	padding: 5px;
+	text-align: center;
 	}
 .proyecto_imgcont
 	{
