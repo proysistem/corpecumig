@@ -1,5 +1,6 @@
 from django import forms
 from .models import Solicitud
+from django.utils.timezone import localtime, now
 
 
 class SolicitudForm(forms.ModelForm):
