@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='evento',
             name='evn_horaevn',
-            field=models.TextField(verbose_name='Hora del evento'),
+            field=models.TimeField(verbose_name='Hora del evento'),
         ),
     ]
