@@ -1,152 +1,173 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Tamma|Open+Sans|Viga');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Viga');
 *   {
-	box-sizing: border-box;
-	margin: 0px;
-	padding: 0px;
-	}
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    }
 img {
-	display: block;
-	max-width: 100%;
-	}
+    display: block;
+    max-width: 100%;
+    }
 h1, h2,h3, h4, h5, h6{
-	font-family: 'Viga', sans-serif;
-	text-align: center;
-	}
+    font-family: 'Viga', sans-serif;
+    text-align: center;
+    }
 body{
-	font-family: 'Open Sans', sans-serif;
-	font-size: 1em;
-	}
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    }
 /*------------------------ Estilos del menu responsive ----------------------- */
 
 /*------------------------ Estilos del Info ----------------------- */
 
-.fondo_page
-	{
-	width: 100%;
-	height: all;
-	}
-.back_slide
-	{
-	background: url(/static/images/pixel-2.png);
-	width: 100%;
-	top: 170px;
-	position: relative;
-	}
+.fondo_page                 /* ------------ utilizado en inicio\index.html:, inicio\nosotros.html:, inicio\propuesta.html:------------- */
+    {
+    width: 100%;
+    height: all;
+    }
+.back_slide     /*---------\inicio\index.html:, \inicio\nosotros.html:, \inicio\propuesta.html:-----------*/
+    {
+    background: url(/static/images/pixel-2.png);
+    width: 100%;
+    margin-top: 170px;
+    }
 .back_titulo
-	{
-	width: 100%;
-	margin-top:170px;
-	margin-bottom: -160px;
-	}
+    {
+    width: 100%;
+    margin-top:170px;
+    margin-bottom: -160px;
+    }
 .back_sub-titulo
-	{
-	font-size: 2em;
-	color:#FFF;
-	text-align: center;
-	margin: 5px auto;
-	padding: 5px;
-	}
+    {
+    font-size: 2em;
+    color:#FFF;
+    text-align: center;
+    margin: 5px auto;
+    padding: 5px;
+    }
 .back_slide.back_image
-	{
-	display: block;
-	min-width: 83%;
-	max-width: 83%;
-	width: 80%;
-	}
-.back_slide	aside
-	{
-	width: 10%;
-	align-content: left;
-	background: linear-gradient(#295641, #58A2B4); /* Standard syntax */
-	}
-.back_image img
-	{
-	background-color: green;
-	width: 100%;
-	}
-/*
-.info_content
-	{
-	align-content: center;
-	display: block;
-	top: 195px;
-	padding: 5px;
-	position: absolute;
-	width: 99%;
-	z-index: 3;
-	}
-*/
-.info_columna
-	{
-	background-color: rgba(108,108,101,0.9);
-	color: #fff;
-	display: block;
-	overflow: auto;
-	padding: 15px;
-	}
+    {
+    width: 100%;
+    }
+.info_columna              /* - - - - - - - - - \inicio\nosotros.html:,  \inicio\propuesta.html:- - - -  - - - - - - - -   */
+    {
+    background-color: rgba(108,108,101,0.9);
+    color: #fff;
+    display: block;
+    overflow: auto;
+    padding: 15px;
+    }
 .info_columna a
-	{
-	text-decoration: none;
-	color: #20B0FB;
-	}
-.info_banner
-	{
-	background: rgba(22,22,22,0.3);
-	color: #fff;
-	display: block;
-	font-size: 15px;
-	text-align: center;
-	width: 100%;
-	&.infobanner_titulo
-		{
-		font-size: 1.8em;
-		}
-	&.banner_text
-		{
-		font-size: 1.2em;
-		}
-	}
-.group    /* Aplica al grupo de importante y pulse */
-	{
-	width: 100%;
-	font-size: 1.2em;
-	display: flex;
-	justify-content: space-between;
-	}
-.group_column
-	{
-	color: #FFF;
-	}
-.group_orizont-1    /* Aplica a importante */
-	{
-	object-position: left;
-	background-color: linear-gradient(#000000, #58A2B4); /* Standard syntax */
-	}
-.group_orizont-2   /* Aplica a pulse*/
-	{
-	width: 08%;
-	}
-.aside_main
-	{
-	display: block;
-	width: 17%;
-	align-content: right;
-	color: #fff;
-	background: linear-gradient(#295641, #58A2B4); /* Standard syntax */
-	}
-.aside_main a img:hover
-	{
-	background-color: rgba(31,101,12,0.4);
-	border-bottom: solid 1px #eeddcc;
-	padding: 10px 15px;
-	}
+    {
+    text-decoration: none;
+    color: #20B0FB;
+    }
+/* ------------------------------------------------------------------------------ */
+/* -------------------| Aside para las llaves en main-screen |------------------- */
+/* ------------------------------------------------------------------------------ */
+.aside_main_content
+    {
+    background: linear-gradient(#295641, #58A2B4); /* Standard syntax */
+    color: #fff;
+    display: block;
+    }
+.aside_main_content img
+    {
+    display: block;
+    width: 90%;
+    margin: auto;
+    }
+.aside_main_content a img:hover
+    {
+    background-color: rgba(31,101,12,0.4);
+    border-bottom: solid 1px #eeddcc;
+    margin: auto;
+    padding: 10px 15px;
+    }
+
+/*------------------------ Estilos responsive design ----------------------- */
+@media(min-width: 768px){
+    .back_slide>.back_image
+    {
+    width: 85%;
+    }
+    .aside_main_content
+    {
+    background-color: blue;
+    padding: 5px 5px;
+    width: 17%;
+    align-content: right;
+    }
+    .form_columns
+    {
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+    margin: 0 auto;
+    justify-content: space-between;
+    }
+    .info_columna
+    {
+    width: 49%;
+    }
+    .info_titulo
+    {
+    font-size: 2em;
+    }
+}
+@media(min-width: 1024px){
+    .back_slide>.back_image
+    {
+    width: 85%;
+    }
+    .aside_main_content
+    {
+    background-color: blue;
+    padding: 5px 5px;
+    width: 17%;
+    align-content: right;
+    }
+    .back_slide
+    {
+    display: flex;
+    }
+    .form_columns
+    {
+    padding: 0 2% 0 2%;
+    }
+    .info_columna
+    {
+    width: 32%;
+    }
+    .info_titulo
+    {
+    font-size: 2.2em;
+    }
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - Seting standard - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.align_tex_right {text-align: right;}
+.align_tex_letf {text-align: left;}
+.align_tex_center {text-align: center;}
+
+.align_itm_right {justify-content: flex-end;}
+.align_itm_letf {align-items: flex_start;}
+.align_itm_center {align-items: flex_center;}
+
+.font_little{font-size: 10px; height: 15px;}
+.font_small{font-size: small;}
+.font_medium{font-size: medium;}
+.font_large{font-size: large;}
+
 .color_780827
-	{
-	background: linear-gradient(#510909, #881F1F, #110903); /* Standard syntax */
-	color: #FFF;
-	padding: 5px;
-	}
+    {
+    background: linear-gradient(#510909, #881F1F, #110903); /* Standard syntax */
+    color: #FFF;
+    padding: 5px;
+    }
 .width_760 {width: 7.67%;}
 .width_003 {width: 003%;}
 .width_005 {width: 005%;}
@@ -165,75 +186,22 @@ body{
 .width_100 {width: 100%;}
 
 .flex_display
-	{
-	display: flex;
-	}
+    {
+    display: flex;
+    }
 .flex_flow
-	{
-	row wrap;
-	}
+    {
+    row wrap;
+    }
 .flex_content
-	{
-	justify-content: center;
-	}
+    {
+    justify-content: center;
+    }
 .flex_wraps
-	{
-	display: inline-flex;
-	}
+    {
+    display: inline-flex;
+    }
 .flex_align
-	{
-	align-content: stretch;
-	}
-/*------------------------ Estilos responsive design ----------------------- */
-@media(min-width: 768px){
-	.form_columns
-	{
-	display: flex;
-	flex-wrap: wrap;
-	width: 99%;
-	margin: 0 auto;
-	justify-content: space-between;
-	}
-	.info_columna
-	{
-	width: 49%;
-	}
-	.info_titulo
-	{
-	font-size: 2em;
-	}
-}
-@media(min-width: 1024px){
-	.back_slide
-	{
-	display: flex;
-	}
- 	.form_columns
-	{
-	padding: 0 2% 0 2%;
-	}
-	.info_columna
-	{
-	width: 32%;
-	}
-	.info_titulo
-	{
-	font-size: 2.2em;
-	}
-}
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/* - - - - - - - - - - - - Seting standard - - - - - - - - - - - - */
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-.align_tex_right {text-align: right;}
-.align_tex_letf {text-align: left;}
-.align_tex_center {text-align: center;}
-
-.align_itm_right {justify-content: flex-end;}
-.align_itm_letf {align-items: flex_start;}
-.align_itm_center {align-items: flex_center;}
-
-.font_little{font-size: 10px; height: 15px;}
-.font_small{font-size: small;}
-.font_medium{font-size: medium;}
-.font_large{font-size: large;}
+    {
+    align-content: stretch;
+    }

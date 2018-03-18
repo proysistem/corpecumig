@@ -1,269 +1,322 @@
-/*	|=======================================================|	*/
-/* 	|					Estilo de header 					| 	*/
-/*	|=======================================================|	*/
+/*  |=======================================================|   */
+/*  |                   Estilo de header                    |   */
+/*  |=======================================================|   */
 @charset "utf-8";
-
-.header .content{
-	background: url(../images/fondo-encabezado.png) no-repeat;
-	/*background: rgba(143,213,214,0.1);*/
-	display: flex;
-	height: 170px;
-	justify-content: space-between;
-	top: 0;
- 	position: fixed;
-	width: 100%;
-	z-index: 5;	/*  Esto indexa como  una capa que se mantendra arriba*/
-	}
-.logo
-	{
-	color: #FFF;
-	display: block;
-	height: 170px;
-	width:	3%;
-	}
-.publicidad
-	{
-	color: #FFF;
-	display: block;
-	height: 155px;
-	width:	70%;
-	}
-.icon-th-list{
-	display: block;
-	margin: 120px 0;
-	}
-.icon-th-list{
-	background: #FBA919;
-	border-radius: 5px;
-	color: green;
-	cursor: pointer;
-	display: block;
-	font-size: 2em;
-	height: 40px;
-	line-height: 45px;
-	margin-left: auto;
-	text-align: center;
-	top: 165px;
-	width:	40px;
-	}
-/*----------------------------------------------------------------------------------------*/
-/*------------------------ Estilos del menu  para medios pequeños ----------------------- */
-/*----------------------------------------------------------------------------------------*/
-.nav
-	{
-	left: -100%;
-	position: absolute;
-	top: 160px;
-	transition: all 0.4s;
-	width: 100%;
-	}
-.menu
-	{
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	}
-.menu__link
-	{
-	display: block;
-	padding: 3px;
-	/*background: rgba(93,92,91,0.9);*/
-    background: #FBA919;
-  	text-align: center;
-	text-decoration: none;
-	color: green;
-	font-size: 1.1em;
-	margin: 1px 0 0 1px;
-	}
-.menu__link:hover
-	{
-    background-color: #eaeaea;
-	color: rgba(93,92,91,0.9);
-	}
-.mostrar
-	{
-	left: 0;
-	}
-/*----------------------------------------------------------------------------------------*/
-/*----------------------------- Estilos del boton de login ------------------------------ */
-/*----------------------------------------------------------------------------------------*/
-.login-content
-	{
-	display: block;
-	height: 40px;
-	margin-top: 60px;
-	width: 100%;
-  	list-style: none;
-  	text-decoration: none;
-	}
-.logear
-	{
- /*	box-shadow: -0.8px -0.8px 0.6px rgba(255,255,255,1);  */
-	border-left: solid 1px #A4A797;
-	border-top: solid 1px #A4A797;
-	display: block;
- 	box-shadow: 1px  1px 1px rgba(255,255,255,1);
- 	font-size: 1.2em;
-  	list-style: none;
-    color: #fff;
-    height: 35px;
-    margin-left: 80%;
-    padding: 5px 0 0 0;
-    text-align: center;
-    text-decoration: none;
-    width: 18%;
-	}
-.logear:hover
-	{
- 	background: linear-gradient(#295641, #58A2B4, #295641); /* Standard syntax */
- 	border-top: solid 1px #747866;
- 	box-shadow: 0.8px  0.8px 0.8px rgba(164,167,151,1);
- 	font-size: 1.1em;
- 	padding: 3px 0 0 0;
- 	/*color: #FBD85F;*/
-	}
-/*----------------------------------------------------------------------------------------*/
-/*----------------------------------  Response design ----------------------------------- */
-/*----------------------------------------------------------------------------------------*/
-@media(min-width: 768px){
-	.logo
-	{
-	display: block;
-	/*width:	210px;*/
-	}
-
+ul{
+  list-style: none;
 }
-@media(min-width: 1024px){
-.logo
-	{
-	display: block;
-	width:	35%;
-	}
-	.menu
-	{
-	display: flex;
-	}
-	.nav
-	{
-	position: static;
-	width: auto;
-	margin-top: 5px;
-	margin-right: 50px;
-	}
-	#btn-menu
-	{
-	display: none;
-	}
-	.icon-menu
-	{
-	display: none;
-	}
-	.menu-link
-	{
-	background-color: rgba(31,101,12,0.4);
-	border-bottom: solid 1px #eeddcc;
-	padding: 10px 15px;
-	}
-/*	.menu-link:hover,.select
-	{
-	background-color: rgba(31,101,12,0.8);
-	border-bottom: solid 0px #ccbbaa;
-	}*/
-}
-
 *{
   margin: 0;
   padding: 0;
 }
-/*header{
-	background: red; height: 65px;
-  font-family: Helvetica;
-  width: 480px;
-  margin: 0 auto;
-}*/
-ul{
-  list-style: none;
-}
+.header .content{
+    background: url(../images/fondo-encabezado.png) no-repeat;
+    display: flex;
+    height: 170px;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5; /*  Esto indexa como  una capa que se mantendra arriba*/
+    }
+.logo
+    {
+    color: #FFF;
+    display: block;
+    height: auto;
+    width:  50%;
+    }
+.publicidad
+    {
+    color: #FFF;
+    margin-right: 7%;
+    }
+#btn-menu
+    {
+    margin-right: 3px;
+    }
+/*
 #menu>li{
-  	display: block;
-	font-size: 1em;
-  	float: left;
-	margin: 1px auto;
-  	padding: 0 1px;
+    display: block;
+    font-size: 1em;
+    float: left;
+    margin: 1px auto;
+    padding: 0 1px;
     width: 98%;
-}
+    }
 #menu>li>ul{
-  display: none;
-}
+    display: none;
+    }
 #menu>li>ul>li{
-  	display: block;
-	font-size: 1em;
-  	float: left;
-	margin: 1px 0 0 5px;
+    display: block;
+    font-size: 1em;
+    float: left;
+    margin: 1px 0 0 5px;
     width: 90%;
-}
+    }
 #menu>li:hover>ul {
-  display:block;
-}
-#menu li>a{
-  background-color: grey;
-  color: white;
-  padding: 10px;
-  display: block;
-  text-decoration: none;
-  min-width: 100px;
-  border-bottom: solid 1px rgba(244,234,254,0.8);
-}
-#menu li>a:hover{
-  color: #000;
-  background-color: #eaeaea;
+    display:block;
+    }
+#menu li>a
+    {
+    color: white;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    min-width: 100px;
+    border-bottom: solid 1px rgba(244,234,254,0.8);
+    }
+    #menu li>a:hover{
+    color: #000;
+    background-color: #eaeaea;
+    }
+    #menu>li{
+    display: block;
+    float: left;
+    text-align:center;
+    width: 120px;
+    }
+*/
+.icon-th-list{
+    background: #FBA919;
+    border-radius: 5px;
+    color: green;
+    cursor: pointer;
+    display: block;
+    font-size: 2em;
+    height: 40px;
+    line-height: 45px;
+    margin-left: auto;
+    margin: 125px 0;
+    text-align: center;
+    top: 165px;
+    width:  40px;
+    }
+/*----------------------------------------------------------------------------------------*/
+/*------------------------ Estilos del menu  para medios pequeños ----------------------- */
+/*----------------------------------------------------------------------------------------*/
+.nav
+    {
+    left: -100%;
+    position: absolute;
+    top: 160px;
+    transition: all 0.4s;
+    width: 100%;
+    }
+.menu
+    {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+
+.menu__link
+    {
+    display: block;
+    padding: 3px;
+    /*background: rgba(93,92,91,0.9);*/
+    background: #FBA919;
+    text-align: center;
+    text-decoration: none;
+    color: green;
+    font-size: 1.1em;
+    margin: 1px 0 0 1px;
+    width: auto;
+    }
+.menu__link:hover
+    {
+    background-color: #eaeaea;
+    color: rgba(93,92,91,0.9);
+    }
+.mostrar
+    {
+    left: 0;
+    }
+/*----------------------------------------------------------------------------------------*/
+/*----------------------------- Estilos del boton de login ------------------------------ */
+/*----------------------------------------------------------------------------------------*/
+.login-content
+    {
+    display: block;
+    font-size: 80%;
+    height: 40px;
+    list-style: none;
+    margin-left: -70px;
+    margin-right: 5%;
+    margin-top: 5px;
+    text-decoration: none;
+    width: 80px;
+    }
+.logear
+    {
+ /* box-shadow: -0.8px -0.8px 0.6px rgba(255,255,255,1);  */
+    border-left: solid 1px #A4A797;
+    border-top: solid 1px #A4A797;
+    display: block;
+    box-shadow: 1px  1px 1px rgba(255,255,255,1);
+    font-size: 1.2em;
+    list-style: none;
+    color: #fff;
+    height: 35px;
+    margin-left: 1%;
+    padding: 5px 0 0 0;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    }
+.logear:hover
+    {
+    background: linear-gradient(#295641, #58A2B4, #295641); /* Standard syntax */
+    border-top: solid 1px #747866;
+    box-shadow: 0.8px  0.8px 0.8px rgba(164,167,151,1);
+    font-size: 1.1em;
+    padding: 3px 0 0 0;
+    /*color: #FBD85F;*/
+    }
+/*----------------------------------------------------------------------------------------*/
+/*----------------------------------  Response design ----------------------------------- */
+/*----------------------------------------------------------------------------------------*/
+@media(min-width: 768px){
+
+    .logo
+    {
+    display: block;
+    width: 20%;
+    }
+
 }
 @media(min-width: 1024px){
-	#menu>li{
-  	display: block;
-  	float: left;
-  	text-align:center;
-    width: 120px;
-	}
+    .logo
+    {
+    display: block;
+    width:  20%;
+    }
+    .publicidad
+    {
+    }
+
+    .nav
+    {
+    position: static;
+    margin-top: 5px;
+    margin-right: 160px;
+    }
+    #btn-menu
+    {
+    display: none;
+    }
+    .icon-menu
+    {
+    display: none;
+    }
+    .menu
+    {
+    display: flex;
+    width: 100%;
+    }
+    .menu__link
+    {
+    background-color: rgba(109,109,106,0.1);
+    border-bottom: solid 1px #eeddcc;
+    border-right: solid 1px #eeddcc;
+    padding: 05px 15px;
+    margin-right: 2px;
+    }
+/*  .menu-link:hover,.select
+    {
+    background-color: rgba(31,101,12,0.8);
+    border-bottom: solid 0px #ccbbaa;
+    }*/
+    .login-content
+    {
+    display: block;
+    height: 40px;
+    margin-top: 58px;
+    width: 100%;
+    margin-left: auto;
+    list-style: none;
+    text-decoration: none;
+    }
+    .logear
+    {
+ /* box-shadow: -0.8px -0.8px 0.6px rgba(255,255,255,1);  */
+    border-left: solid 1px #A4A797;
+    border-top: solid 1px #A4A797;
+    display: block;
+    box-shadow: 1px  1px 1px rgba(255,255,255,1);
+    font-size: 1.2em;
+    list-style: none;
+    color: #fff;
+    height: 35px;
+    margin-left: 65%;
+    padding: 5px 0 0 0;
+    text-align: center;
+    text-decoration: none;
+    width: 28%;
+    }
+
+    #menu li>a
+    {
+    color: white;
+    padding: 5px;
+    display: block;
+    text-decoration: none;
+    min-width: 100px;
+    border-bottom: solid 1px rgba(244,234,254,0.8);
+    }
+    #menu li>a:hover{
+    color: #000;
+    background-color: #eaeaea;
+    }
+    #menu>li{
+    background: url(../images/fondo-encabezado.png) no-repeat;
+    display: block;
+    float: left;
+    text-align:center;
+    width: auto;
+    }
 }
+
+
+
 
 
 /*------------------------ Estilos del menu  para medios pequenos ----------------------- */
 .xnav
-	{
-	left: -100%;
-	position: absolute;
-	top: 160px;
-	transition: all 0.4s;
-	width: 100%;
-	}
+    {
+    left: -100%;
+    position: absolute;
+    top: 160px;
+    transition: all 0.4s;
+    width: 100%;
+    }
 .xmenu
-	{
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	}
+    {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
 .xmenu__link
-	{
-	display: block;
-	padding: 15px;
-	/*background: rgba(93,92,91,0.9);*/
+    {
+    display: block;
+    padding: 15px;
+    /*background: rgba(93,92,91,0.9);*/
     background: #FBA919;
-  	text-align: center;
-	text-decoration: none;
-	color: green;
-	font-size: 1.6em;
-	margin: 1px 0 0 7px;
-	}
+    text-align: center;
+    text-decoration: none;
+    color: green;
+    font-size: 1.6em;
+    margin: 1px 0 0 7px;
+    }
 .xmenu__link:hover
-	{
+    {
     background-color: #eaeaea;
-	color: rgba(93,92,91,0.9);
-	}
+    color: rgba(93,92,91,0.9);
+    }
 .xmostrar
-	{
-	left: 0;
-/*	position: relative;
-	z-index: 100;*/
-	}
+    {
+    left: 0;
+/*  position: relative;
+    z-index: 100;*/
+    }
 
