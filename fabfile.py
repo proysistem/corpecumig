@@ -23,6 +23,7 @@ def upgrade():
 
     with cd(env.directory):
         run('git pull')
+        run('git lfs pull')
         with prefix(env.activate):
             run('pip install -r ../requirement/production.txt')
             run('python manage.py migrate --settings=corporacion.settings.production')
