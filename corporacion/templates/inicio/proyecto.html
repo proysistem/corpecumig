@@ -1,91 +1,94 @@
-{% extends 'base/base_main.html' %}
+{% extends 'base/base_main.html' %} {% load staticfiles %}
 
 {% block title %} Home {% endblock title %}</title>
 
 {% block context%}
-			<section class="proyecto_content">
-				<article class="proyecto_subcont">
-					<div class="proyecto_columns">
-						<div class="proyecto-titulo"><h1>Calendario de exposiciones del proyecto</h1></div>
-						<table border="1" class="proyecto_colitms flex_content" >
-							<thead>
-							 	<tr>
-							 		<th class="color_780827">Fecha del evento</th>
-							 		<th class="color_780827">Hora del evento</th>
-							 		<th class="color_780827"> Ciudad </th>
-							 		<th class="color_780827">Dirección</th>
-							 		<th class="color_780827">Nombre del local</th>
-							 		<th class="color_780827">Asistieron</th>
-							 		<th class="color_780827">Status</th>
-							 	</tr>
-							</thead>
-							<tbody border="0">
-							 	{% if object_list %}
-							 	{% for var_evnfield in object_list %}
-							 	<tr>
-									<td class="columns_tab">{{ var_evnfield.evn_fechaev }} </td>
-									<td class="columns_tab">{{ var_evnfield.evn_horaevn }} </td>
-									<td class="columns_tab">{{ var_evnfield.evn_zipcode }} </td>
-									<td class="columns_tab">{{ var_evnfield.evn_direcci }} </td>
-									<td class="columns_tab">{{ var_evnfield.evn_localid }} </td>
-									<td class="columns_tab">{{ var_evnfield.evn_asisten }} </td>
-									<td class="columns_tab">{{ var_evnfield.evn_pendien }} </td>
-								</tr>
-								{% endfor %}
-								{% else %}
-								<h4> No hay registros en Eventos </h4>
-								{% endif %}
-							</tbody>
-						</table>
-						<div class="proyecto_colitms">
-							<ul class="pager_botons">
-								<li>
-									{% if page_obj.has_previous %}
-									<a class="icon-left-open pager_prev" href="?page={{page_obj.previous_page_number}}">Previous</a>
-									{% endif %}
-								</li>
-								<li>
-									{% if page_obj.has_next %}
-									<a class="pager_next" href="?page={{page_obj.next_page_number}}">Next <span class="icon-right-open"></span></a>
-									{% endif %}
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="proyecto_columns flex_content">
-						<p class="proyecto_colitms"> Es importante que verifique la propuesta. Dele un click en la imagen y accese a la información expuesta.
-						<a href="{% url 'inicio:propuesta' %}"><img class="align_itm_right" src="static/images/enter.jpg"></a>
-
-						</p>
-					</div>
-					<div class="proyecto_columns  flex_content">
-						<div class"proyecto_colitms"><img src="static/images/atencion.png"></div>
-					</div>
-					<div class="proyecto_columns flex_display flex_flow">
-						<div class"proyecto_colitms"><img src="static/images/importante.png"></div><div class"proyecto_colitms"><a href="{% url 'visitantes:sol_new' %}"><img src="static/images/pulse.png"></a></div>
-					</div>
-					<div class="proyecto_columns  flex_content">
-						<div class"proyecto_colitms"><a href="{% url 'eventos:ast_new' %}"><img src="static/images/opcional.jpg"></a></div>
-					</div>
-					<div class="proyecto_columns">
-						<div class"proyecto_colitms"><img src="static/images/cuenta.jpg"></div>
-					</div>
-				</article>
-			</section>
+            <section class="proyecto_content">
+                <article class="proyecto_subcont">
+                    <div class="proyecto_columns">
+                        <div class="proyecto-titulo"><h1>Exposición del proyecto</h1></div>
+                        <div class="align_tex_center">
+                            <video controls autoplay name="media" preload="auto" ><source src="{% static 'videos/video02_edit.mp4' %}" type="video/mp4" onerror="videoFail(this)"></video>
+                            <div class="align_tex_center"><a class="color_yellow" target="_blank" href="https://www.facebook.com/locutortentacionradio/videos/2085323648407719/">Ver el video completo</a></div>
+                            <br><br>
+                            <div class="flex_cloumn">
+                                <div><p> Es importante que verifique la propuesta. Dele un click en la imagen y accese a la información expuesta.</p></div>
+                                <div><a class="align_tex_center" href="{% url 'inicio:propuesta' %}"><img src="static/images/enter.png"></a></div>
+                            </div>
+                        </div><hr><br>
+                        <div class="proyecto-titulo"><h1>Calendario de exposiciones del proyecto</h1></div>
+                        <table border="1" class="proyecto_colitms flex_content" >
+                            <thead>
+                                <tr>
+                                    <th class="color_780827">Fecha del evento</th>
+                                    <th class="color_780827">Hora del evento</th>
+                                    <th class="color_780827"> Ciudad </th>
+                                    <th class="color_780827">Dirección</th>
+                                    <th class="color_780827">Nombre del local</th>
+                                    <th class="color_780827">Asistieron</th>
+                                    <th class="color_780827">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody border="0">
+                                {% if object_list %}
+                                {% for var_evnfield in object_list %}
+                                <tr>
+                                    <td class="columns_tab">{{ var_evnfield.evn_fechaev }} </td>
+                                    <td class="columns_tab">{{ var_evnfield.evn_horaevn }} </td>
+                                    <td class="columns_tab">{{ var_evnfield.evn_zipcode }} </td>
+                                    <td class="columns_tab">{{ var_evnfield.evn_direcci }} </td>
+                                    <td class="columns_tab">{{ var_evnfield.evn_localid }} </td>
+                                    <td class="columns_tab">{{ var_evnfield.evn_asisten }} </td>
+                                    <td class="columns_tab">{{ var_evnfield.evn_pendien }} </td>
+                                </tr>
+                                {% endfor %}
+                                {% else %}
+                                <h4> No hay registros en Eventos </h4>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                        <div class="proyecto_colitms">
+                            <ul class="pager_botons">
+                                <li>
+                                    {% if page_obj.has_previous %}
+                                    <a class="icon-left-open pager_prev" href="?page={{page_obj.previous_page_number}}">Previous</a>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if page_obj.has_next %}
+                                    <a class="pager_next" href="?page={{page_obj.next_page_number}}">Next <span class="icon-right-open"></span></a>
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="proyecto_columns flex_content">
+                        <div class"proyecto_colitms"><img src="static/images/atencion.png"></div>
+                    </div>
+                    <div class="proyecto_columns flex_display flex_flow">
+                        <div class"proyecto_colitms"><img src="static/images/importante.png"></div><div class"proyecto_colitms"><a href="{% url 'visitantes:sol_new' %}"><img src="static/images/pulse.png"></a></div>
+                    </div>
+                    <div class="proyecto_columns  flex_content">
+                        <div class"proyecto_colitms"><a href="{% url 'eventos:ast_new' %}"><img src="static/images/opcional.jpg"></a></div>
+                    </div>
+                    <div class="proyecto_columns">
+                        <div class"proyecto_colitms"><img src="static/images/cuenta.jpg"></div>
+                    </div>
+                </article>
+            </section>
 {% endblock context %}
 
 {% block js %}
-	<script type="text/javascript">
+    <script type="text/javascript">
 
-	function empleo(){
-		alert("Sobresaturado..!!");
-	}
-		function propio(){
-		alert("No tenemos disponible..!!");
-	}
-		function finanza(){
-		alert("Seguir un curso de finanzas..!!");
-	}
-	</script>
+    function empleo(){
+        alert("Sobresaturado..!!");
+    }
+        function propio(){
+        alert("No tenemos disponible..!!");
+    }
+        function finanza(){
+        alert("Seguir un curso de finanzas..!!");
+    }
+    </script>
 {% endblock js %}

@@ -193,6 +193,7 @@ ul{
     }
     .publicidad
     {
+    border-top-color: blue;
     }
 
     .nav
@@ -231,7 +232,7 @@ ul{
     {
     display: block;
     height: 40px;
-    margin-top: 58px;
+    margin-top: 45px;
     width: 100%;
     margin-left: auto;
     list-style: none;

@@ -1,7 +1,8 @@
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView, ListView
-from apps.eventos.forms import MensajeForm, AspiranteForm
-from apps.eventos.models import Aspirante, Evento, Mensaje
+from apps.eventos.forms import MensajeForm
+from apps.eventos.models import Evento, Mensaje
+# from apps.inicio.models import Aspirante
 from .models import Solicitud
 from .forms import SolicitudForm
 
@@ -25,15 +26,6 @@ class Sol_Nuevo(CreateView):
     template_name = 'visitantes/Sol_New.html'
     success_url = reverse_lazy('inicio:iniciar')
 
-# ========  A  S  P  I  R  A  N  T  E  S  =========== #
-
-
-class Asp_Nuevo(CreateView):
-    """Crear Aspirante"""
-    model = Aspirante
-    form_class = AspiranteForm
-    template_name = 'visitantes/Asp_New.html'
-    success_url = reverse_lazy('inicio:iniciar')
 
 # ======== M  E  N  S  A  J  E  =========== #
 

@@ -1,7 +1,7 @@
 
 from django.conf.urls import url
 from django.contrib import admin
-from apps.eventos.views import (AspLista, AspNuevo, AspView, AspEdita, AspDelet, EvnLista, EvnNuevo, EvnView, EvnEdita,
+from apps.eventos.views import (EvnLista, EvnNuevo, EvnView, EvnEdita,
                                 EvnDelet, MsgLista, MsgNuevo, MsgView, MsgEdita, MsgDelet, ZipLista, ZipNuevo, ZipView,
                                 ZipEdita, ZipDelet, AstLista, AstNuevo, AstView, AstEdita, AstDelet)
 
@@ -9,11 +9,11 @@ from apps.eventos.views import (AspLista, AspNuevo, AspView, AspEdita, AspDelet,
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^AspPanel',                  AspLista.as_view(), name='asp_panel'),
-    url(r'^AspNuevo/$',                AspNuevo.as_view(), name='asp_new'),
-    url(r'^AspConsulta/(?P<pk>\d+)/$', AspView.as_view(),  name='asp_view'),
-    url(r'^AspEdita/(?P<pk>\d+)/$',    AspEdita.as_view(), name='asp_edit'),
-    url(r'^AspElimina/(?P<pk>\d+)/$',  AspDelet.as_view(), name='asp_delet'),
+    # url(r'^AspPanel',                  AspLista.as_view(), name='asp_panel'),
+    # url(r'^AspNuevo/$',                AspNuevo.as_view(), name='asp_new'),
+    # url(r'^AspConsulta/(?P<pk>\d+)/$', AspView.as_view(),  name='asp_view'),
+    # url(r'^AspEdita/(?P<pk>\d+)/$',    AspEdita.as_view(), name='asp_edit'),
+    # url(r'^AspElimina/(?P<pk>\d+)/$',  AspDelet.as_view(), name='asp_delet'),
 
     url(r'^AstPanel',                  AstLista.as_view(), name='ast_panel'),
     url(r'^AstNuevo/$',                AstNuevo.as_view(), name='ast_new'),

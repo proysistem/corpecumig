@@ -24,7 +24,7 @@ def upgrade():
     with cd(env.directory):
         run('git pull')
         with prefix(env.activate):
-            run('pip install -r requirement/production.txt')
+            run('pip install -r ../requirement/production.txt')
             run('python manage.py migrate --settings=corporacion.settings.production')
             run('python manage.py collectstatic -l --noinput --settings=corporacion.settings.production')
         sudo("supervisorctl restart %s" % env.project)

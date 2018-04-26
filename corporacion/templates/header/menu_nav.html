@@ -1,21 +1,30 @@
-		<header class="header">
-			<div class="content">
-				<div class="logo"><img src="static/images/logo.png"></div>
-				<div class="publicidad"><h1>CORPORACION ECUATORIANA DE MIGRANTES</h1></div>
-				<span class="icon-th-list" id="btn-menu"></span>
-				<div>
-				<nav class="nav" id="nav">
-					<ul id="menu">
-						<li class="menu__item"><a class="menu__link" href="{% url 'inicio:iniciar' %}">Inicio</a></li>
-						<li class="menu__item"><a class="menu__link" href="{% url 'inicio:nosotros' %}">Nosotros</a></li>
-						<li class="menu__item"><a class="menu__link" href="{% url 'inicio:proyecto' %}">Proyecto</a></li>
-						<li class="menu__item"><a class="menu__link" href="{% url 'inicio:contacto' %}">Contactar</a></li>
-					</ul><br><br><br>
-				</nav>
-				<div>
-					<ul>
-						<li class="login-content"><a class="logear icon-user" href="{% url 'visitantes:evn_panel' %}">  Login  </a></li>
-					</ul>
-				</div></div>
-			</div>
-		</header>
+        <header class="header">
+            <div class="content">
+                <div class="logo"><img src="static/images/logo.png"></div>
+                <div class="publicidad"><h1>Coreex Investments</h1></div>
+                <span class="icon-th-list" id="btn-menu"></span>
+                <div>
+                <nav class="nav" id="nav">
+                    <ul id="menu">
+                        <li class="menu__item"><a class="menu__link" href="{% url 'inicio:iniciar' %}">Inicio</a></li>
+                        <li class="menu__item"><a class="menu__link" href="{% url 'inicio:nosotros' %}">Nosotros</a></li>
+                        <li class="menu__item"><a class="menu__link" href="{% url 'inicio:proyecto' %}">Proyecto</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">Contactar</a>
+                            <ul>
+                                <li><a href="{% url 'inicio:contacto' %}">Contacto</a></li>
+                                <li><a href="{% url 'inicio:requiere' %}">Solicita</a></li>
+                                <li><a href="{% url 'inicio:registro' %}">Registrarme</a></li>
+                            </ul>
+                        </li>
+                    </ul><br><br><br>
+                </nav>
+                <div>
+                    <ul>
+                        <li class="login-content"><a class="logear icon-user" href="{% url 'visitantes:evn_panel' %}">  Login  </a></li>
+                    </ul>
+                </div></div>
+            </div>
+        </header>
+{% block super %}
+    <script src="/static/js/menu.js"></script>
+{% endblock super %}

@@ -1,8 +1,8 @@
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, ListView
-from .forms import ZipcodigoForm, MensajeForm, EventoForm, AspiranteForm, AsistenteForm
+from .forms import ZipcodigoForm, MensajeForm, EventoForm, AsistenteForm
 
-from apps.eventos.models import Zipcodigo, Aspirante, Asistente, Evento, Mensaje
+from apps.eventos.models import Zipcodigo, Asistente, Evento, Mensaje
 
 # ========Z  I  P  C  O  D  I  G  O  =========== #
 
@@ -124,47 +124,6 @@ class EvnDelet(DeleteView):
     form_class = EventoForm
     template_name = 'eventos/Evn_Delet.html'
     success_url = reverse_lazy('eventos:evn_panel')
-
-# ========  A  S  P  I  R  A  N  T  E  S  =========== #
-
-
-class AspLista(ListView):
-    """Listado de Aspirante"""
-    model = Aspirante
-    template_name = 'eventos/Asp_Panel.html'
-    ordering = ['pk']
-    paginate_by = 15
-
-
-class AspView(DetailView):
-    """Listado de Aspirante"""
-    template_name = 'eventos/Asp_View.html'
-    model = Aspirante
-
-
-class AspNuevo(CreateView):
-    """Crear Aspirante"""
-    model = Aspirante
-    form_class = AspiranteForm
-    template_name = 'eventos/Asp_New.html'
-    success_url = reverse_lazy('eventos:asp_panel')
-
-
-class AspEdita(UpdateView):
-    """Listado de Aspirantes"""
-    model = Aspirante
-    form_class = AspiranteForm
-    template_name = 'eventos/Asp_Edit.html'
-    success_url = reverse_lazy('eventos:asp_panel')
-
-
-class AspDelet(DeleteView):
-    """Listado de Aspirantes"""
-    model = Aspirante
-    form_class = AspiranteForm
-    template_name = 'eventos/Asp_Delet.html'
-    success_url = reverse_lazy('eventos:asp_panel')
-
 
 # ========  A  S  I  S  T  E  N  T  E  S  =========== #
 

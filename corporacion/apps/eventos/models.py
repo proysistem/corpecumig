@@ -13,25 +13,6 @@ class Zipcodigo(models.Model):
         return "%s %s %s %s" % (self.zip_country, self.zip_ciuddet, self.zip_estddet, self.zip_idzipco)
 
 
-class Aspirante(models.Model):
-    asp_frsname = models.CharField('Primer Nombre', max_length=15)
-    asp_midname = models.CharField('Segundo Nombre', max_length=15)
-    asp_secmanp = models.CharField('Apellidos', max_length=25)
-    asp_secmanm = models.CharField('Apellidos', max_length=25)
-    asp_fechnac = models.DateField('Fecha de Nacimiento')
-    asp_direcci = models.CharField('Direccion Domiciliaria', max_length=50)
-    asp_zipcodg = models.ForeignKey(Zipcodigo, null=True, blank=True)
-    asp_telefon = models.CharField('Telefono', max_length=15, blank=True)
-    asp_celular = models.CharField('Celular', max_length=15, blank=True)
-    asp_correoe = models.EmailField('e-mail')
-    asp_imgclte = models.ImageField(upload_to="clientes", blank=True)
-    asp_rgunico = models.CharField('Registro Unico', max_length=20, blank=True)
-    asp_categor = models.IntegerField(default=0)
-
-    def __str__(self):
-        return "%s %s %s %s" % (self.asp_frsnameo, self.asp_midname, self.asp_secmanp, self.asp_secmanm)
-
-
 class Asistente(models.Model):
     ast_frsname = models.CharField('Primer Nombre', max_length=25)
     ast_lasname = models.CharField('Segundo Nombre', max_length=25)
@@ -63,7 +44,7 @@ class Mensaje(models.Model):
     eml_descrip = models.EmailField('email')
     eml_mensaje = models.TextField('Mensaje')
     eml_requier = models.BooleanField(default=False)
-    eml_aspiran = models.ForeignKey(Aspirante)
+    # eml_aspiran = models.ForeignKey(Aspirante)
 
     def __str__(self):
         return self.eml_descrip

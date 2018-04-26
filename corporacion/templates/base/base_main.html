@@ -3,39 +3,39 @@
 {% load staticfiles %}
 
 {% block css %}
-
 {% comment %}
- 	<link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
- 	<link rel="stylesheet" href="{% static 'css/superslides.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
+    <link rel="stylesheet" href="{% static 'css/superslides.css' %}">
 {% endcomment %}
- 	<link rel="stylesheet" href="{% static 'css/header.css' %}">
- 	<link rel="stylesheet" href="{% static 'css/fontello.css' %}">
- 	<link rel="stylesheet" href="{% static 'css/style_main.css' %}">
- 	<link rel="stylesheet" href="{% static 'css/proyecto.css' %}">
- 	<link rel="stylesheet" href="{% static 'css/footer.css' %}">
- 	<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/proyecto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 
 {% endblock css %}
 
 {% block content %}
-	<div class="container">
-		<div class="content">
-			{% include 'header/menu_nav.html' %}
-			{% block context %}
+    <div class="container">
+        <div class="content">
+            {% include 'header/menu_nav.html' %}
+            {% block context %}
 
 
-
-			{% endblock context %}
-		</div>
-	</div>
+            {% endblock context %}
+        </div>
+    </div>
 {% endblock content %}
 
 {% block footer %}
-		{% include 'footer/footer.html' %}
+        {% include 'footer/footer.html' %}
 {% endblock footer %}
 
+{% comment %}
 {% block js %}
-	<script src="/static/js/jquery.js"></script>
-	<script src="/static/js/jquery.superslides.js"></script>
-	<script src="/static/js/menu.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/jquery.superslides.js"></script>
+    <script src="/static/js/menu.js"></script>
 {% endblock js %}
+{% endcomment %}

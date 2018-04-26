@@ -15,7 +15,7 @@ h1, h2,h3, h4, h5, h6{
     }
 body{
     font-family: 'Open Sans', sans-serif;
-    font-size: 1em;
+    font-size: 1.2em;
     }
 /*------------------------ Estilos del menu responsive ----------------------- */
 
@@ -168,6 +168,10 @@ body{
     color: #FFF;
     padding: 5px;
     }
+.color_yellow
+    {
+    color: yellow;
+    }
 .width_760 {width: 7.67%;}
 .width_003 {width: 003%;}
 .width_005 {width: 005%;}
@@ -189,9 +193,18 @@ body{
     {
     display: flex;
     }
+.flex_cloumn
+    {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: flex-start;
+}
 .flex_flow
     {
-    row wrap;
+    display: wrap;
     }
 .flex_content
     {

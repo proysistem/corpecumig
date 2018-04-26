@@ -1,5 +1,5 @@
 from django import forms
-from apps.eventos.models import Zipcodigo, Aspirante, Asistente, Evento, Mensaje
+from apps.eventos.models import Zipcodigo, Asistente, Evento, Mensaje
 from django.utils.timezone import localtime, now
 
 
@@ -50,21 +50,21 @@ class MensajeForm(forms.ModelForm):
                 'eml_descrip',
                 'eml_mensaje',
                 'eml_requier',
-                'eml_aspiran',
+                # 'eml_aspiran',
                 ]
         labels = {
                 # 'eml_fechmsj': '',
                 'eml_descrip': '',
                 'eml_mensaje': '',
                 'eml_requier': '',
-                'eml_aspiran': '',
+                # 'eml_aspiran': '',
                 }
         widgets = {
                 # 'eml_fechmsj': forms.TextInput(),
                 'eml_descrip': forms.TextInput(),
                 'eml_mensaje': forms.TextInput(),
                 'eml_requier': forms.TextInput(),
-                'eml_aspiran': forms.TextInput(),
+                # 'eml_aspiran': forms.TextInput(),
                 }
 
 
@@ -104,58 +104,6 @@ class EventoForm(forms.ModelForm):
                 'evn_asisten': forms.TextInput(),
                 'evn_pendien': forms.TextInput(),
                 }
-
-
-class AspiranteForm(forms.ModelForm):
-
-    class Meta:
-        model = Aspirante
-
-        fields = [
-                'asp_frsname',
-                'asp_midname',
-                'asp_secmanp',
-                'asp_secmanm',
-                'asp_fechnac',
-                'asp_direcci',
-                'asp_zipcodg',
-                'asp_telefon',
-                'asp_celular',
-                'asp_correoe',
-                'asp_imgclte',
-                'asp_rgunico',
-                'asp_categor',
-                ]
-        labels = {
-                'asp_frsname': '',
-                'asp_midname': '',
-                'asp_secmanp': '',
-                'asp_secmanm': '',
-                'asp_fechnac': '',
-                'asp_direcci': '',
-                'asp_zipcodg': '',
-                'asp_telefon': '',
-                'asp_celular': '',
-                'asp_correoe': '',
-                'asp_imgclte': '',
-                'asp_rgunico': '',
-                'asp_categor': '',
-                }
-        widgets = {
-                'asp_frsname': forms.TextInput(),
-                'asp_midname': forms.TextInput(),
-                'asp_secmanp': forms.TextInput(),
-                'asp_secmanm': forms.TextInput(),
-                'asp_fechnac': forms.TextInput(),
-                'asp_direcci': forms.TextInput(),
-                'asp_zipcodg': forms.TextInput(),
-                'asp_telefon': forms.TextInput(),
-                'asp_celular': forms.TextInput(),
-                'asp_correoe': forms.TextInput(),
-                'asp_imgclte': forms.TextInput(),
-                'asp_rgunico': forms.TextInput(),
-                'asp_categor': forms.TextInput(),
-                 }
 
 
 class AsistenteForm(forms.ModelForm):
