@@ -54,7 +54,7 @@ class Reg_Nuevo(CreateView):
     """Crear un Aspirante """
     model = Aspirante
     form_class = AspiranteForm
-    template_name = 'inicio/Cnt_New.html'
+    template_name = 'inicio/Asp_New.html'
     success_url = reverse_lazy('inicio:contacto')
 
 # ========  A  S  P  I  R  A  N  T  E  S  =========== #
@@ -114,5 +114,5 @@ class Req_Nuevo(CreateView):
     """Crear un Solicitud """
     model = Solicitud
     form_class = SolicitudForm
-    template_name = 'inicio/Cnt_New.html'
+    template_name = 'inicio/Sol_New.html'
     success_url = reverse_lazy('inicio:contacto')

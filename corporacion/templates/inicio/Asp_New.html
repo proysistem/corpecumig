@@ -1,0 +1,77 @@
+{% extends 'base/base_main.html' %}
+
+{% block title %} Graba  Aspirante {% endblock title %}</title>
+
+{% block context%}
+		<div class="content_contact">
+				<section class="form_content">
+					<form  class="formulario" method="POST" enctype="multipart">{% csrf_token %}
+						<div class="group"><div><h1 class="form_titulo">Aspirante</h1></div><div class="align_tex_center">{{form.cnt_fechmsj}}</div></div>
+
+						{% if form.errors %}
+
+							<div class="form_errors" role="alert">
+								{{ form.errors }}
+							</div>
+
+						{% endif %}
+
+						{% for field in form %}
+							{% for error in field.errors %}
+								<strong>{{ field.label }}</strong>: {{ error }}<br>
+							{% endfor %}
+						{% endfor %}
+
+						{% for error in form.non_field_errors %}
+							<strong>{{ error }}</strong>
+						{% endfor %}
+
+
+						{% if nuevo_mov.errors %}
+
+							<div class="form_errors" role="alert">
+								{{ nuevo_mov.errors }}
+							</div>
+
+						{% endif %}
+
+						{% for field in nuevo_mov %}
+							{% for error in field.errors %}
+								<strong>{{ field.label }}</strong>: {{ error }}<br>
+							{% endfor %}
+						{% endfor %}
+
+						{% for error in nuevo_mov.non_field_errors %}
+							<strong>{{ error }}</strong>
+						{% endfor %}
+						<div><div><label for="{{form.asp_frsname.name}}">{{form.asp_frsname.label}}</label></div><div>{{form.asp_frsname}}</div></div>
+						<div><div><label for="{{form.asp_midname.name}}">{{form.asp_midname.label}}</label></div><div>{{form.asp_midname}}</div></div>
+						<div><div><label for="{{form.asp_secmanp.name}}">{{form.asp_secmanp.label}}</label></div><div>{{form.asp_secmanp}}</div></div>
+						<div><div><label for="{{form.asp_secmanm.name}}">{{form.asp_secmanm.label}}</label></div><div>{{form.asp_secmanm}}</div></div>
+		{% comment %}	<div><div><label for="{{form.asp_fechnac.name}}">{{form.asp_fechnac.label}}</label></div><div>{{form.asp_fechnac}}</div></div> {% endcomment %}
+		{% comment %}	<div><div><label for="{{form.asp_direcci.name}}">{{form.asp_direcci.label}}</label></div><div>{{form.asp_direcci}}</div></div> {% endcomment %}
+						<div><div><label for="{{form.asp_zipcodg.name}}">{{form.asp_zipcodg.label}}</label></div><div>{{form.asp_zipcodg}}</div></div>
+		{% comment %}	<div><div><label for="{{form.asp_telefon.name}}">{{form.asp_telefon.label}}</label></div><div>{{form.asp_telefon}}</div></div> {% endcomment %}
+		 				<div><div><label for="{{form.asp_celular.name}}">{{form.asp_celular.label}}</label></div><div>{{form.asp_celular}}</div></div>
+						<div><div><label for="{{form.asp_correoe.name}}">{{form.asp_correoe.label}}</label></div><div>{{form.asp_correoe}}</div></div>
+		{% comment %}	<div><div><label for="{{form.asp_imgclte.name}}">{{form.asp_imgclte.label}}</label></div><div>{{form.asp_imgclte}}</div></div> {% endcomment %}
+		{% comment %}	<div><div><label for="{{form.asp_rgunico.name}}">{{form.asp_rgunico.label}}</label></div><div>{{form.asp_rgunico}}</div></div> {% endcomment %}
+		{% comment %}	<div><div><label for="{{form.asp_categor.name}}">{{form.asp_categor.label}}</label></div><div>{{form.asp_categor}}</div></div> {% endcomment %}
+						<br>
+
+						<input type="hidden" name="{{ asp_fechnac }}" value="date">
+						<input type="hidden" name="{{ asp_direcci }}" value="main street">
+						<input type="hidden" name="{{ asp_telefon }}" value="9">
+						<input type="hidden" name="{{ asp_celular }}" value="9">
+						<input type="hidden" name="{{ asp_imgclte }}" value="">
+						<input type="hidden" name="{{ asp_rgunico }}" value="9">
+						<input type="hidden" name="{{ asp_categor }}" value="0">
+						<input name="mvi_rcargos" type="hidden" id="inp_rcargos" value="0">
+						<br>
+						<div ><button class="icon-database form_submit" type="submit">  Submit  </button></div>
+						<br>
+
+					</form>
+				</section>
+		</div>
+{% endblock context %}
