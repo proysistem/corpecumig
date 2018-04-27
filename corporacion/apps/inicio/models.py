@@ -29,10 +29,8 @@ class Solicitud(models.Model):
 
 
 class Aspirante(models.Model):
-    asp_frsname = models.CharField('Primer Nombre', max_length=15)
-    asp_midname = models.CharField('Segundo Nombre', max_length=15)
-    asp_secmanp = models.CharField('Apellidos', max_length=25)
-    asp_secmanm = models.CharField('Apellidos', max_length=25)
+    asp_nombres = models.CharField('Primer Nombre', max_length=25)
+    asp_apellid = models.CharField('Apellidos', max_length=25)
     asp_fechnac = models.DateField('Fecha de Nacimiento')
     asp_direcci = models.CharField('Direccion Domiciliaria', max_length=50)
     asp_zipcodg = models.CharField('Cód. Postal', max_length=15, null=True, blank=True)
@@ -44,4 +42,4 @@ class Aspirante(models.Model):
     asp_categor = models.IntegerField(default=0)
 
     def __str__(self):
-        return "%s %s %s %s" % (self.asp_frsnameo, self.asp_midname, self.asp_secmanp, self.asp_secmanm)
+        return "%s %s" % (self.asp_nombres, self.asp_apellid)

@@ -46,10 +46,8 @@ class AspiranteForm(forms.ModelForm):
         model = Aspirante
 
         fields = [
-                'asp_frsname',
-                'asp_midname',
-                'asp_secmanp',
-                'asp_secmanm',
+                'asp_nombres',
+                'asp_apellid',
                 'asp_fechnac',
                 'asp_direcci',
                 'asp_zipcodg',
@@ -58,28 +56,24 @@ class AspiranteForm(forms.ModelForm):
                 'asp_correoe',
                 'asp_imgclte',
                 'asp_rgunico',
-                'asp_categor',
+                # 'asp_categor',
                 ]
         labels = {
-                'asp_frsname': '1er. Nombre  ',
-                'asp_midname': '2do. Nombre  ',
-                'asp_secmanp': 'Apellido pat.',
-                'asp_secmanm': 'Apellido mat.',
-                'asp_fechnac': 'F./nacimiento',
+                'asp_nombres': 'Nombres  ',
+                'asp_apellid': 'Apellidos',
+                'asp_fechnac': 'F./nacimiento (dd/mm/aa)',
                 'asp_direcci': 'Dirección    ',
                 'asp_zipcodg': 'Código postal',
                 'asp_telefon': 'Telef.de casa',
                 'asp_celular': 'Núm. /celular',
-                'asp_correoe': 'Correo elect.',
+                'asp_correoe': 'Correo electrónico',
                 'asp_imgclte': 'Fot.Aspirante',
                 'asp_rgunico': 'Regist. Unico',
-                'asp_categor': 'Categoría    ',
+                # 'asp_categor': 'Categoría    ',
                 }
         widgets = {
-                'asp_frsname': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
-                'asp_midname': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
-                'asp_secmanp': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
-                'asp_secmanm': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
+                'asp_nombres': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
+                'asp_apellid': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
                 'asp_fechnac': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
                 'asp_direcci': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
                 'asp_zipcodg': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
@@ -88,7 +82,7 @@ class AspiranteForm(forms.ModelForm):
                 'asp_correoe': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
                 'asp_imgclte': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
                 'asp_rgunico': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
-                'asp_categor': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
+                # 'asp_categor': forms.TextInput(attrs={"class": "form_input", "autocomplete": "off"}),
                  }
 
 

@@ -40,22 +40,19 @@
 						{% for error in form.non_field_errors %}
 							<strong>{{ error }}</strong>
 						{% endfor %}
-						<div class="form_row"><div class="form_label">Primer Nombre   <label for="{{form.asp_frsname.name}}">{{form.asp_frsname.label}}</label></div><div>{{form.asp_frsname}}</div></div>
-						<div class="form_row"><div class="form_label">Segundo nombre  <label for="{{form.asp_midname.name}}">{{form.asp_midname.label}}</label></div><div>{{form.asp_midname}}</div></div>
-						<div class="form_row"><div class="form_label">Apell. paterno  <label for="{{form.asp_secmanp.name}}">{{form.asp_secmanp.label}}</label></div><div>{{form.asp_secmanp}}</div></div>
-						<div class="form_row"><div class="form_label">Apell. materno  <label for="{{form.asp_secmanm.name}}">{{form.asp_secmanm.label}}</label></div><div>{{form.asp_secmanm}}</div></div>
-		{% comment %}	<div class="form_row"><div class="form_label">Fecha/nacimiento<label for="{{form.asp_fechnac.name}}">{{form.asp_fechnac.label}}</label></div><div>{{form.asp_fechnac}}</div></div> {% endcomment %}
-		{% comment %}	<div class="form_row"><div class="form_label">Dirección       <label for="{{form.asp_direcci.name}}">{{form.asp_direcci.label}}</label></div><div>{{form.asp_direcci}}</div></div> {% endcomment %}
+						<div class="form_row"><div class="form_label">Nombres         <label for="{{form.asp_nombres.name}}">{{form.asp_nombres.label}}</label></div><div>{{form.asp_nombres}}</div></div>
+						<div class="form_row"><div class="form_label">Apellidosd      <label for="{{form.asp_apellid.name}}">{{form.asp_apellid.label}}</label></div><div>{{form.asp_apellid}}</div></div>
+		 				<div class="form_row"><div class="form_label">Fecha/nacimiento<label for="{{form.asp_fechnac.name}}">{{form.asp_fechnac.label}}</label></div><div>{{form.asp_fechnac}}</div></div> {% endcomment %}
+		 				<div class="form_row"><div class="form_label">Dirección       <label for="{{form.asp_direcci.name}}">{{form.asp_direcci.label}}</label></div><div>{{form.asp_direcci}}</div></div> {% endcomment %}
 						<div class="form_row"><div class="form_label">Código postal   <label for="{{form.asp_zipcodg.name}}">{{form.asp_zipcodg.label}}</label></div><div>{{form.asp_zipcodg}}</div></div>
 		{% comment %}	<div class="form_row"><div class="form_label">Núm. de télefono<label for="{{form.asp_telefon.name}}">{{form.asp_telefon.label}}</label></div><div>{{form.asp_telefon}}</div></div> {% endcomment %}
-		{% comment %}	<div class="form_row"><div class="form_label">Núm. de celular <label for="{{form.asp_celular.name}}">{{form.asp_celular.label}}</label></div><div>{{form.asp_celular}}</div></div> {% endcomment %}
+		 				<div class="form_row"><div class="form_label">Núm. de celular <label for="{{form.asp_celular.name}}">{{form.asp_celular.label}}</label></div><div>{{form.asp_celular}}</div></div> {% endcomment %}
 						<div class="form_row"><div class="form_label">E-mail          <label for="{{form.asp_correoe.name}}">{{form.asp_correoe.label}}</label></div><div>{{form.asp_correoe}}</div></div>
 		{% comment %}	<div class="form_row"><div class="form_label">Imagen (Foto)   <label for="{{form.asp_imgclte.name}}">{{form.asp_imgclte.label}}</label></div><div>{{form.asp_imgclte}}</div></div> {% endcomment %}
 		{% comment %}	<div class="form_row"><div class="form_label">Registro único  <label for="{{form.asp_rgunico.name}}">{{form.asp_rgunico.label}}</label></div><div>{{form.asp_rgunico}}</div></div> {% endcomment %}
 		{% comment %}	<div class="form_row"><div class="form_label">Categoría       <label for="{{form.asp_categor.name}}">{{form.asp_categor.label}}</label></div><div>{{form.asp_categor}}</div></div> {% endcomment %}
 						<br>
 
-						<input type="hidden" name="{{ asp_fechnac }}" value="date">
 						<input type="hidden" name="{{ asp_direcci }}" value="main street">
 						<input type="hidden" name="{{ asp_telefon }}" value="9">
 						<input type="hidden" name="{{ asp_celular }}" value="9">

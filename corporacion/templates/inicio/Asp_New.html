@@ -5,6 +5,7 @@
 {% block context%}
 		<div class="content_contact">
 				<section class="form_content">
+					<div class="formulario" ><h2>Indicación breve</h2><P>Registrarse aquí, significa que Usted aspira ser socio propietario dentro de esta corporación.  El siguiente paso seria inscribirse, para lo cual nosotros le haremos llegar a la dirección que Usted nos detalle aquí, el formulario para dicho efecto, con la inscripción ya confirmada, usted solo debe esperar que se liberen las acciones, para luego poder comprar y pasar a ser socio propietario de manera oficial. Por la compra de sus acciones se le entregara el correspondiente titulo de propiedad "Escritura" de sus acciones adquiridas.<br> <br> Agradecemos y felicitamos por el inicio de una buena y acertada desición.<BR> </P></div>
 					<form  class="formulario" method="POST" enctype="multipart">{% csrf_token %}
 						<div class="group"><div><h1 class="form_titulo">Aspirante</h1></div><div class="align_tex_center">{{form.cnt_fechmsj}}</div></div>
 
@@ -44,12 +45,10 @@
 						{% for error in nuevo_mov.non_field_errors %}
 							<strong>{{ error }}</strong>
 						{% endfor %}
-						<div><div><label for="{{form.asp_frsname.name}}">{{form.asp_frsname.label}}</label></div><div>{{form.asp_frsname}}</div></div>
-						<div><div><label for="{{form.asp_midname.name}}">{{form.asp_midname.label}}</label></div><div>{{form.asp_midname}}</div></div>
-						<div><div><label for="{{form.asp_secmanp.name}}">{{form.asp_secmanp.label}}</label></div><div>{{form.asp_secmanp}}</div></div>
-						<div><div><label for="{{form.asp_secmanm.name}}">{{form.asp_secmanm.label}}</label></div><div>{{form.asp_secmanm}}</div></div>
-		{% comment %}	<div><div><label for="{{form.asp_fechnac.name}}">{{form.asp_fechnac.label}}</label></div><div>{{form.asp_fechnac}}</div></div> {% endcomment %}
-		{% comment %}	<div><div><label for="{{form.asp_direcci.name}}">{{form.asp_direcci.label}}</label></div><div>{{form.asp_direcci}}</div></div> {% endcomment %}
+						<div><div><label for="{{form.asp_nombres.name}}">{{form.asp_nombres.label}}</label></div><div>{{form.asp_nombres}}</div></div>
+						<div><div><label for="{{form.asp_apellid.name}}">{{form.asp_apellid.label}}</label></div><div>{{form.asp_apellid}}</div></div>
+		 				<div><div><label for="{{form.asp_fechnac.name}}">{{form.asp_fechnac.label}}</label></div><div>{{form.asp_fechnac}}</div></div>
+		 				<div><div><label for="{{form.asp_direcci.name}}">{{form.asp_direcci.label}}</label></div><div>{{form.asp_direcci}}</div></div>
 						<div><div><label for="{{form.asp_zipcodg.name}}">{{form.asp_zipcodg.label}}</label></div><div>{{form.asp_zipcodg}}</div></div>
 		{% comment %}	<div><div><label for="{{form.asp_telefon.name}}">{{form.asp_telefon.label}}</label></div><div>{{form.asp_telefon}}</div></div> {% endcomment %}
 		 				<div><div><label for="{{form.asp_celular.name}}">{{form.asp_celular.label}}</label></div><div>{{form.asp_celular}}</div></div>
@@ -58,15 +57,10 @@
 		{% comment %}	<div><div><label for="{{form.asp_rgunico.name}}">{{form.asp_rgunico.label}}</label></div><div>{{form.asp_rgunico}}</div></div> {% endcomment %}
 		{% comment %}	<div><div><label for="{{form.asp_categor.name}}">{{form.asp_categor.label}}</label></div><div>{{form.asp_categor}}</div></div> {% endcomment %}
 						<br>
-
-						<input type="hidden" name="{{ asp_fechnac }}" value="date">
-						<input type="hidden" name="{{ asp_direcci }}" value="main street">
 						<input type="hidden" name="{{ asp_telefon }}" value="9">
-						<input type="hidden" name="{{ asp_celular }}" value="9">
 						<input type="hidden" name="{{ asp_imgclte }}" value="">
 						<input type="hidden" name="{{ asp_rgunico }}" value="9">
-						<input type="hidden" name="{{ asp_categor }}" value="0">
-						<input name="mvi_rcargos" type="hidden" id="inp_rcargos" value="0">
+						<input type="hidden" name="{{ asp_categor }}" value="1">
 						<br>
 						<div ><button class="icon-database form_submit" type="submit">  Submit  </button></div>
 						<br>
