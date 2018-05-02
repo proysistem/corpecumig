@@ -126,8 +126,14 @@
  	margin-top: -195px;
 	}
 @media(min-width: 1024px){
-	.form_content, .info_content
+	.form_content
+    {
+    display: inline-flex;
+    }
+
+	.formulario, .info_content
 	{
 	width: 48%;
+	margin-top: 15px;
 	}
 }

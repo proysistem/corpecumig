@@ -271,13 +271,12 @@ ul{
     background-color: #eaeaea;
     }
     #menu>li{
-    background: url(../images/fondo-encabezado.png) no-repeat;
+    //* background: url(../images/fondo-encabezado.png) no-repeat;  */
     display: block;
     float: left;
     text-align:center;
     width: auto;
     }
-
 
 #menu>li{
     display: block;

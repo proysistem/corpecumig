@@ -5,7 +5,9 @@
 {% block context%}
         <div class="content_contact">
                 <section class="form_content">
-                    <div class="formulario" ><h2>Indicación breve</h2><P>Aqui Usted puede dejar sus datos, para solicitar una exposición del proyecto en el lugar de su residencia, para lo cual nosotros nos pondremos en contacto con Usted, para poder coordinas fecha, lugar y hora.</P></div>
+                    <div class="formulario" >
+                        <h2>Indicación breve</h2><br><br>
+                        <P>Aqui Usted puede dejar sus datos, para solicitar una exposición del proyecto en el lugar de su residencia, para lo cual nosotros nos pondremos en contacto con Usted, para poder coordinar fecha, lugar, hora,  y,  más detalles.</P></div>
                     <form  class="formulario" method="POST" enctype="multipart">{% csrf_token %}
                         <div class="group"><div><h1 class="form_titulo">Solicito Exposición</h1></div><div class="align_tex_center">{{form.cnt_fechmsj}}</div></div>
 
