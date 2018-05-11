@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from .views import IndexView, proyecto, propuesta, nosotros, Cnt_Nuevo, Reg_Nuevo, Req_Nuevo
+from .views import IndexView, proyecto, propuesta, nosotros, Cnt_Nuevo, Reg_Nuevo, Req_Nuevo, Acc_Panel
 
 
 urlpatterns = [
@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^IndCont$', Cnt_Nuevo.as_view(), name='contacto'),
     url(r'^IndRegs$', Reg_Nuevo.as_view(), name='registro'),
     url(r'^IndReqi$', Req_Nuevo.as_view(), name='requiere'),
+    url(r'^AccPanel', Acc_Panel.as_view(), name='acc_panel'),
 ]

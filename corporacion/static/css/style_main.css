@@ -172,6 +172,16 @@ body{
     {
     color: yellow;
     }
+.rowcolor:nth-child(odd) {
+    background-color: rgba(242,255,255, 0.8);
+    padding: 0 0 1px 0;
+}
+.rowcolor:nth-child(even) {
+    background-color:#ffffff;
+    padding: 0 0 1px 0;
+}
+
+
 .width_760 {width: 7.67%;}
 .width_003 {width: 003%;}
 .width_005 {width: 005%;}

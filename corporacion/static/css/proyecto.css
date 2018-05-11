@@ -1,5 +1,9 @@
 /*------------------------ Estilos del Info ----------------------- */
-
+a, ul, li
+	{
+	text-decoration: none;
+	list-style: none;
+	}
 .proyecto_content
 	{
 	background: url(/static/images/pixel-2.png);
@@ -51,4 +55,8 @@
 	{
 	width: 99%;
 	margin: auto;
+	}
+.proyecto_fq
+	{
+	padding: 15px;
 	}

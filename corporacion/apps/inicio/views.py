@@ -37,6 +37,10 @@ def propuesta(request):
     return render(request, template, context)
 
 
+class Acc_Panel(ListView):
+    """Listado de Eventos"""
+    template_name = 'inicio/Acc_Panel.html'
+
 # ========  C  O  N  T  A  C  T  O  =========== #
 
 
