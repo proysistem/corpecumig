@@ -51,6 +51,15 @@ class Cnt_Nuevo(CreateView):
     template_name = 'inicio/Cnt_New.html'
     success_url = reverse_lazy('inicio:contacto')
 
+
+class Cnt_Panel(ListView):
+    """Crear un Contacto """
+    model = Contacto
+    form_class = ContactoForm
+    template_name = 'visitantes/Cnt_Panel.html'
+    ordering = ['pk']
+    paginate_by = 15
+
 # ========  R E G I S T R O  =========== #
 
 
@@ -64,10 +73,11 @@ class Reg_Nuevo(CreateView):
 # ========  A  S  P  I  R  A  N  T  E  S  =========== #
 
 
-class AspLista(ListView):
+class Asp_Panel(ListView):
     """Listado de Aspirante"""
     model = Aspirante
-    template_name = 'eventos/Asp_Panel.html'
+    form_class = AspiranteForm
+    template_name = 'visitantes/Asp_Panel.html'
     ordering = ['pk']
     paginate_by = 15
 
@@ -120,3 +130,13 @@ class Req_Nuevo(CreateView):
     form_class = SolicitudForm
     template_name = 'inicio/Sol_New.html'
     success_url = reverse_lazy('inicio:contacto')
+
+
+class Req_Panel(ListView):
+    """Listado de Solicitud"""
+    model = Solicitud
+    form_class = SolicitudForm
+    template_name = 'visitantes/Req_Panel.html'
+    ordering = ['pk']
+    paginate_by = 15
+
