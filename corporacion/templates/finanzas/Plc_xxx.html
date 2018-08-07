@@ -1,0 +1,417 @@
+{% extends 'base/base_finanzas.html' %}
+
+{% block title %} Graba  Cuentas {% endblock title %}</title>
+
+            {% block context%}
+            <div class="crea_content">
+                <h3 class="crea_proceso">Finanzas: Cuentas</h3>
+                <a class="icon-reply crea_boton" href="{% url 'finanzas:plc_panel' %}">Volver</a>
+
+            </div>
+            <div>
+                {% for message in messages %}
+                    <strong>Mensaje:</strong> {{ message }}
+                {% endfor %}
+                <form method="POST" enctype="multipart">{% csrf_token %}
+                    <div class="form_content">
+                        <div class="form_titulo"><h1>Graba Cuentas</h1></div>
+                        <div class="form_esc">
+                            <a class="icon-cancel" href="{% url 'finanzas:plc_panel' %}"></a>
+                        </div>
+                        {% if form.error %}
+                            <div class="form_errors" role="alert">
+                                {{ form.error }}
+                            </div>
+                        {% endif %}
+
+                        {% if forms.error %}
+                            <div class="form_errors" role="alert">
+                                {{ form.error }}
+                            </div>
+                        {% endif %}
+                        {% comment %}
+                            #TODO: # Verificacion de errores
+                        {% endcomment %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <strong>{{ field.label }}</strong>: {{ error }}<br>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <strong>{{ error }}</strong>
+                        {% endfor %}
+
+                                {% comment %}
+
+                        {% if var_exifield.saldoxtalla.tex_actua01 > 0 %}
+                                    <div class="bicolor adivgn_tex_right width_760">{{ var_exifield.saldoxtalla.tex_actua01|default:0|stringformat:"0.2f" }} </div>
+                                {% else %}
+                                    <div class="bicolor adivgn_tex_center width_760">___</div>
+                                {% endif %}
+                        {% if object.plc_nivlcta < 2 %}
+                                <div class="width_020"><div><label for="<div>{{form.plc_ncuenta.name}}"><div class="width_003">{{form.plc_ncuenta.label}}</label></div><div><div class="width_003">{{form.plc_ncuenta}}</div></div>
+                        {% else %}
+                        {% endif %}
+
+                                <div class="width_010"><div><div class="width_003">{{form.plc_cuenta1.label}}</div></div>
+                                <div class="width_010"><div><div class="width_003">{{form.plc_cuenta2.label}}</div></div>
+                                <div class="width_010"><div><div class="width_003">{{form.plc_cuenta3.label}}</div></div>
+                                  <div class="width_010"><div><div class="width_003">{{form.plc_cuenta4.label}}</div></div>
+                                <div class="width_010"><div><div class="width_003">{{form.plc_auxili1.label}}</div></div>
+                                <div class="width_010"><div><div class="width_003">{{form.plc_auxili2.label}}</div></div>
+                              <div class="width_010"><div><div class="width_003">{{form.plc_auxili3.label}}</div></div>
+                                {% endcomment %}
+
+                        <div class="tab_content width_100">
+                            <div class="tab_row tab_th flex_display">
+                                <div class="width_030">C U E N T A   C O N T A B L E</div>
+                                <div class="width_045">NOMBRE DE LA CUENTA</div>
+                                <div class="width_025 flex_nowrap">
+                                    <div class="width_010 block_display-inline">NI VEL</div>
+                                    <div class="width_010 block_display-inline">BAL NCE</div>
+                                    <div class="width_010 block_display-inline">ANE XO</div>
+                                    <div class="width_010 block_display-inline">RES ULT</div>
+                                    <div class="width_010 block_display-inline">MAY OR</div>
+                                    <div class="width_010 block_display-inline">TIP CTA</div>
+                                </div>
+                            </div>
+                            <div class="width_099 flex_display">
+                                <div class="width_030 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_cuenta1"  autofocus required  onchange=""> {{ form.plc_cuenta1 }} </div>
+                                </div>
+                                <div class='width_045 flex_nowrap' id="idf_detalle"> {{ form.plc_detalle }} </div>
+                                <div class="width_025 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_nivlcta"> {{ form.plc_nivlcta }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctabaln"> {{ form.plc_ctabaln }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctanexo"> {{ form.plc_ctanexo }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctarsul"> {{ form.plc_ctarsul }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctamyor"> {{ form.plc_ctamyor }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_tipocta"> {{ form.plc_tipocta }} </div>
+                                </div>
+                            </div>
+
+                            <div class="width_099 flex_display">
+                                <div class="width_030 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_cuenta1"> {{ form.plc_cuenta1 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta2"  autofocus required  onchange=""> {{ form.plc_cuenta2 }} </div>
+                                </div>
+                                <div class='width_045 flex_nowrap' id="idf_detalle"> {{ form.plc_detalle }} </div>
+                                <div class="width_025 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_nivlcta"> {{ form.plc_nivlcta }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctabaln"> {{ form.plc_ctabaln }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctanexo"> {{ form.plc_ctanexo }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctarsul"> {{ form.plc_ctarsul }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctamyor"> {{ form.plc_ctamyor }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_tipocta"> {{ form.plc_tipocta }} </div>
+                                </div>
+                            </div>
+
+                            <div class="width_099 flex_display">
+                                <div class="width_030 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_cuenta1"> {{ form.plc_cuenta1 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta2"> {{ form.plc_cuenta2 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta3"  autofocus required  onchange=""> {{ form.plc_cuenta3 }} </div>
+                                </div>
+                                <div class='width_045 flex_nowrap' id="idf_detalle"> {{ form.plc_detalle }} </div>
+                                <div class="width_025 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_nivlcta"> {{ form.plc_nivlcta }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctabaln"> {{ form.plc_ctabaln }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctanexo"> {{ form.plc_ctanexo }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctarsul"> {{ form.plc_ctarsul }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctamyor"> {{ form.plc_ctamyor }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_tipocta"> {{ form.plc_tipocta }} </div>
+                                </div>
+                            </div>
+
+                            <div class="width_099 flex_display">
+                                <div class="width_030 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_cuenta1"> {{ form.plc_cuenta1 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta2"> {{ form.plc_cuenta2 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta3"> {{ form.plc_cuenta3 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta4"  autofocus required  onchange=""> {{ form.plc_cuenta4 }} </div>
+                                </div>
+                                <div class='width_045 flex_nowrap' id="idf_detalle"> {{ form.plc_detalle }} </div>
+                                <div class="width_025 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_nivlcta"> {{ form.plc_nivlcta }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctabaln"> {{ form.plc_ctabaln }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctanexo"> {{ form.plc_ctanexo }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctarsul"> {{ form.plc_ctarsul }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctamyor"> {{ form.plc_ctamyor }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_tipocta"> {{ form.plc_tipocta }} </div>
+                                </div>
+                            </div>
+
+                            <div class="width_099 flex_display">
+                                <div class="width_030 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_cuenta1"> {{ form.plc_cuenta1 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta2"> {{ form.plc_cuenta2 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta3"> {{ form.plc_cuenta3 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta4"> {{ form.plc_cuenta4 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_auxili1"  autofocus required  onchange=""> {{ form.plc_auxili1 }} </div>
+                                </div>
+                                <div class='width_045 flex_nowrap' id="idf_detalle"> {{ form.plc_detalle }} </div>
+                                <div class="width_025 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_nivlcta"> {{ form.plc_nivlcta }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctabaln"> {{ form.plc_ctabaln }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctanexo"> {{ form.plc_ctanexo }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctarsul"> {{ form.plc_ctarsul }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctamyor"> {{ form.plc_ctamyor }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_tipocta"> {{ form.plc_tipocta }} </div>
+                                </div>
+                            </div>
+
+                            <div class="width_099 flex_display">
+                                <div class="width_030 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_cuenta1"> {{ form.plc_cuenta1 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta2"> {{ form.plc_cuenta2 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta3"> {{ form.plc_cuenta3 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta4"> {{ form.plc_cuenta4 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_auxili1"> {{ form.plc_auxili1 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_auxili2"  autofocus required  onchange=""> {{ form.plc_auxili2 }} </div>
+                                </div>
+                                <div class='width_045 flex_nowrap' id="idf_detalle"> {{ form.plc_detalle }} </div>
+                                <div class="width_025 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_nivlcta"> {{ form.plc_nivlcta }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctabaln"> {{ form.plc_ctabaln }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctanexo"> {{ form.plc_ctanexo }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctarsul"> {{ form.plc_ctarsul }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctamyor"> {{ form.plc_ctamyor }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_tipocta"> {{ form.plc_tipocta }} </div>
+                                </div>
+                            </div>
+                            <div class="width_099 flex_display">
+                                <div class="width_030 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_cuenta1"> {{ form.plc_cuenta1 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta2"> {{ form.plc_cuenta2 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta3"> {{ form.plc_cuenta3 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_cuenta4"> {{ form.plc_cuenta4 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_auxili1"> {{ form.plc_auxili1 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_auxili2"> {{ form.plc_auxili2 }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_auxili3"  autofocus required  onchange=""> {{ form.plc_auxili3 }} </div>
+                                </div>
+                                <div class='width_045 flex_nowrap' id="idf_detalle"> {{ form.plc_detalle }} </div>
+                                <div class="width_025 flex_nowrap">
+                                    <div class='width_010 block_display-inline' id="idf_nivlcta"> {{ form.plc_nivlcta }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctabaln"> {{ form.plc_ctabaln }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctanexo"> {{ form.plc_ctanexo }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctarsul"> {{ form.plc_ctarsul }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_ctamyor"> {{ form.plc_ctamyor }} </div>
+                                    <div class='width_010 block_display-inline' id="idf_tipocta"> {{ form.plc_tipocta }} </div>
+                                </div>
+                            </div>
+                            <div class="width_99 flex_display"><br>
+                            </div>
+
+{% comment %}
+
+
+                            <div class="width_99 flex_display">
+                                <div class="width_030 flex_display">
+                                    <div class='width10'><input class='' name='plc_cuenta1' type='' id='inp_cuenta1'  onchange=""></div>
+                                </div>
+                                <div class='width_050'><input class='' name='plc_detalle' type='' id='inp_detalle'></div>
+                                <div class="width_020 flex_display">
+                                    <div class='width_015'><input class='' name='plc_nivlcta' type='' id='inp_nivlcta'></div>
+                                    <div class='width_015'><input class='' name='plc_ctabaln' type='' id='inp_ctabaln'></div>
+                                    <div class='width_015'><input class='' name='plc_ctanexo' type='' id='inp_ctanexo'></div>
+                                    <div class='width_015'><input class='' name='plc_ctarsul' type='' id='inp_ctarsul'></div>
+                                    <div class='width_015'><input class='' name='plc_ctamyor' type='' id='inp_ctamyor'></div>
+                                    <div class='width_015'><input class='' name='plc_tipocta' type='' id='inp_tipocta'></div>
+                                </div>
+                            </div>
+
+                            <div class="width_99 flex_display">
+                                <div class="width_030 flex_display">
+                                    <div class='width10'><input class='' name='plc_cuenta1' type='' id='inp_cuenta1'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta2' type='' id='inp_cuenta2' onchange=""></div>
+                                </div>
+                                <div class='width_050'><input class='' name='plc_detalle' type='' id='inp_detalle'></div>
+                                <div class="width_020 flex_display">
+                                    <div class='width_015'><input class='' name='plc_nivlcta' type='' id='inp_nivlcta'></div>
+                                    <div class='width_015'><input class='' name='plc_ctabaln' type='' id='inp_ctabaln'></div>
+                                    <div class='width_015'><input class='' name='plc_ctanexo' type='' id='inp_ctanexo'></div>
+                                    <div class='width_015'><input class='' name='plc_ctarsul' type='' id='inp_ctarsul'></div>
+                                    <div class='width_015'><input class='' name='plc_ctamyor' type='' id='inp_ctamyor'></div>
+                                    <div class='width_015'><input class='' name='plc_tipocta' type='' id='inp_tipocta'></div>
+                                </div>
+                            </div>
+
+                            <div class="width_99 flex_display">
+                                <div class="width_030 flex_display">
+                                    <div class='width10'><input class='' name='plc_cuenta1' type='' id='inp_cuenta1'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta2' type='' id='inp_cuenta2'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta3' type='' id='inp_cuenta3' onchange=""></div>
+                                </div>
+                                <div class='width_050'><input class='' name='plc_detalle' type='' id='inp_detalle'></div>
+                                <div class="width_020 flex_display">
+                                    <div class='width_015'><input class='' name='plc_nivlcta' type='' id='inp_nivlcta'></div>
+                                    <div class='width_015'><input class='' name='plc_ctabaln' type='' id='inp_ctabaln'></div>
+                                    <div class='width_015'><input class='' name='plc_ctanexo' type='' id='inp_ctanexo'></div>
+                                    <div class='width_015'><input class='' name='plc_ctarsul' type='' id='inp_ctarsul'></div>
+                                    <div class='width_015'><input class='' name='plc_ctamyor' type='' id='inp_ctamyor'></div>
+                                    <div class='width_015'><input class='' name='plc_tipocta' type='' id='inp_tipocta'></div>
+                                </div>
+                            </div>
+
+                            <div class="width_99 flex_display">
+                                <div class="width_030 flex_display">
+                                    <div class='width10'><input class='' name='plc_cuenta1' type='' id='inp_cuenta1'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta2' type='' id='inp_cuenta2'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta3' type='' id='inp_cuenta3'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta4' type='' id='inp_cuenta4' onchange=""></div>
+                                </div>
+                                <div class='width_050'><input class='' name='plc_detalle' type='' id='inp_detalle'></div>
+                                <div class="width_020 flex_display">
+                                    <div class='width_015'><input class='' name='plc_nivlcta' type='' id='inp_nivlcta'></div>
+                                    <div class='width_015'><input class='' name='plc_ctabaln' type='' id='inp_ctabaln'></div>
+                                    <div class='width_015'><input class='' name='plc_ctanexo' type='' id='inp_ctanexo'></div>
+                                    <div class='width_015'><input class='' name='plc_ctarsul' type='' id='inp_ctarsul'></div>
+                                    <div class='width_015'><input class='' name='plc_ctamyor' type='' id='inp_ctamyor'></div>
+                                    <div class='width_015'><input class='' name='plc_tipocta' type='' id='inp_tipocta'></div>
+                                </div>
+                            </div>
+
+                            <div class="width_99 flex_display">
+                                <div class="width_030 flex_display">
+                                    <div class='width10'><input class='' name='plc_cuenta1' type='' id='inp_cuenta1'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta2' type='' id='inp_cuenta2'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta3' type='' id='inp_cuenta3'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta4' type='' id='inp_cuenta4'></div>
+                                    <div class='width10'><input class='' name='plc_auxili1' type='' id='inp_auxili1' onchange=""></div>
+                                </div>
+                                <div class='width_050'><input class='' name='plc_detalle' type='' id='inp_detalle'></div>
+                                <div class="width_020 flex_display">
+                                    <div class='width_015'><input class='' name='plc_nivlcta' type='' id='inp_nivlcta'></div>
+                                    <div class='width_015'><input class='' name='plc_ctabaln' type='' id='inp_ctabaln'></div>
+                                    <div class='width_015'><input class='' name='plc_ctanexo' type='' id='inp_ctanexo'></div>
+                                    <div class='width_015'><input class='' name='plc_ctarsul' type='' id='inp_ctarsul'></div>
+                                    <div class='width_015'><input class='' name='plc_ctamyor' type='' id='inp_ctamyor'></div>
+                                    <div class='width_015'><input class='' name='plc_tipocta' type='' id='inp_tipocta'></div>
+                                </div>
+                            </div>
+
+                            <div class="width_99 flex_display">
+                                <div class="width_030 flex_display">
+                                    <div class='width10'><input class='' name='plc_cuenta1' type='' id='inp_cuenta1'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta2' type='' id='inp_cuenta2'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta3' type='' id='inp_cuenta3'></div>
+                                    <div class='width10'><input class='' name='plc_cuenta4' type='' id='inp_cuenta4'></div>
+                                    <div class='width10'><input class='' name='plc_auxili1' type='' id='inp_auxili1'></div>
+                                    <div class='width10'><input class='' name='plc_auxili2' type='' id='inp_auxili2' onchange=""></div>
+                                </div>
+                                <div class='width_050'><input class='' name='plc_detalle' type='' id='inp_detalle'></div>
+                                <div class="width_020 flex_display">
+                                    <div class='width_015'><input class='' name='plc_nivlcta' type='' id='inp_nivlcta'></div>
+                                    <div class='width_015'><input class='' name='plc_ctabaln' type='' id='inp_ctabaln'></div>
+                                    <div class='width_015'><input class='' name='plc_ctanexo' type='' id='inp_ctanexo'></div>
+                                    <div class='width_015'><input class='' name='plc_ctarsul' type='' id='inp_ctarsul'></div>
+                                    <div class='width_015'><input class='' name='plc_ctamyor' type='' id='inp_ctamyor'></div>
+                                    <div class='width_015'><input class='' name='plc_tipocta' type='' id='inp_tipocta'></div>
+                                </div>
+                            </div>
+
+                            <div class="width_099 flex_display">
+                                <div class="width_020 flex_display">
+                                    <div class='width_010 flex_align'><input class='' name='plc_cuenta1' type='' id='inp_cuenta1'></div>
+                                    <div class='width_010 flex_align'><input class='' name='plc_cuenta2' type='' id='inp_cuenta2'></div>
+                                    <div class='width_010 flex_align'><input class='' name='plc_cuenta3' type='' id='inp_cuenta3'></div>
+                                    <div class='width_010 flex_align'><input class='' name='plc_cuenta4' type='' id='inp_cuenta4'></div>
+                                    <div class='width_010 flex_align'><input class='' name='plc_auxili1' type='' id='inp_auxili1'></div>
+                                    <div class='width_010 flex_align'><input class='' name='plc_auxili2' type='' id='inp_auxili2'></div>
+                                    <div class='width_010 flex_align'><input class='' name='plc_auxili3' type='' id='inp_auxili3' onchange=""></div>
+                                    <div class="width_030 flex_align">no creo que no salga este datos</div>
+                                </div>
+                                <div class='width_060'><input class='' name='plc_detalle' type='' id='inp_detalle'></div>
+                                <div class="width_020 flex_display">
+                                    <div class='width_015'><input class='' name='plc_nivlcta' type='' id='inp_nivlcta'></div>
+                                    <div class='width_015'><input class='' name='plc_ctabaln' type='' id='inp_ctabaln'></div>
+                                    <div class='width_015'><input class='' name='plc_ctanexo' type='' id='inp_ctanexo'></div>
+                                    <div class='width_015'><input class='' name='plc_ctarsul' type='' id='inp_ctarsul'></div>
+                                    <div class='width_015'><input class='' name='plc_ctamyor' type='' id='inp_ctamyor'></div>
+                                    <div class='width_015'><input class='' name='plc_tipocta' type='' id='inp_tipocta'></div>
+                                </div>
+                            </div>
+
+                            <div class="width_99 flex_display"></div>
+                                <div class="width_030 flex_display">
+                                    <div class="width_003" >{{form.plc_cuenta1}}</div>
+                                </div>
+                                <div class="width_050"><div>{{form.plc_detalle}}</div></div>
+                                <div class="width_005"><div>{{form.plc_nivlcta}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctabaln}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctanexo}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctarsul}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctamyor}}</div></div>
+                                <div class="width_003"><div>{{form.plc_tipocta}}</div></div>
+                            </div>
+                            <div class="width_99 flex_display">
+                                <div class="width_030">
+                                    <div onchange="" class="width_003">{{form.plc_cuenta1}}
+                                    </div>{{form.plc_cuenta2}}</div><div class="width_030"></div></div>
+                                <div class="width_050"><div>{{form.plc_detalle}}</div></div>
+                                <div class="width_005"><div>{{form.plc_nivlcta}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctabaln}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctanexo}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctarsul}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctamyor}}</div></div>
+                                <div class="width_003"><div>{{form.plc_tipocta}}</div></div>
+                            </div>
+                            <div class="width_99 flex_display">
+                                <div class="width_030"><div onchange=""><div class="width_003">{{form.plc_cuenta1}}</div><div class="width_003">{{form.plc_cuenta2}}</div><div class="width_003">{{form.plc_cuenta3}}</div></div></div>
+                                <div class="width_050"><div>{{form.plc_detalle}}</div></div>
+                                <div class="width_005"><div>{{form.plc_nivlcta}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctabaln}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctanexo}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctarsul}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctamyor}}</div></div>
+                                <div class="width_003"><div>{{form.plc_tipocta}}</div></div>
+                            </div>
+                            <div class="width_99 flex_display">
+                                <div class="width_030"><div onchange=""><div class="width_003">{{form.plc_cuenta1}}</div><div class="width_003">{{form.plc_cuenta2}}</div><div class="width_003">{{form.plc_cuenta3}}</div><div class="width_003">{{form.plc_cuenta3}}</div></div></div>
+                                <div class="width_050"><div>{{form.plc_detalle}}</div></div>
+                                <div class="width_005"><div>{{form.plc_nivlcta}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctabaln}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctanexo}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctarsul}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctamyor}}</div></div>
+                                <div class="width_003"><div>{{form.plc_tipocta}}</div></div>
+                            </div>
+                            <div class="width_99 flex_display">
+                                <div class="width_030"><div onchange=""><div class="width_003">{{form.plc_cuenta1}}</div><div class="width_003">{{form.plc_cuenta2}}</div><div class="width_003">{{form.plc_cuenta3}}</div><div class="width_003">{{form.plc_cuenta3}}</div><div class="width_003">{{form.plc_auxili1}}</div></div></div>
+                                <div class="width_050"><div>{{form.plc_detalle}}</div></div>
+                                <div class="width_005"><div>{{form.plc_nivlcta}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctabaln}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctanexo}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctarsul}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctamyor}}</div></div>
+                                <div class="width_003"><div>{{form.plc_tipocta}}</div></div>
+                            </div>
+                            <div class="width_99 flex_display">
+                                <div class="width_030"><div onchange=""><div class="width_003">{{form.plc_cuenta1}}</div><div class="width_003">{{form.plc_cuenta2}}</div><div class="width_003">{{form.plc_cuenta3}}</div><div class="width_003">{{form.plc_cuenta3}}</div><div class="width_003">{{form.plc_auxili1}}</div><div class="width_003">{{form.plc_auxili2}}</div></div></div>
+                                <div class="width_050"><div>{{form.plc_detalle}}</div></div>
+                                <div class="width_005"><div>{{form.plc_nivlcta}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctabaln}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctanexo}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctarsul}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctamyor}}</div></div>
+                                <div class="width_003"><div>{{form.plc_tipocta}}</div></div>
+                            </div>
+                            <div class="width_99 flex_display">
+                                <div class="width_030"><div onchange=""><div class="width_003">{{form.plc_cuenta1}}</div><div class="width_003 color_back-red">{{form.plc_cuenta2}}</div><div class="width_003">{{form.plc_cuenta3}}</div><div class="width_003">{{form.plc_cuenta3}}</div><div class="width_003">{{form.plc_auxili1}}</div><div class="width_003">{{form.plc_auxili2}}</div><div class="width_003">{{form.plc_auxili3}}</div></div></div>
+                                <div class="width_050"><div>{{form.plc_detalle}}</div></div>
+                                <div class="width_005"><div>{{form.plc_nivlcta}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctabaln}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctanexo}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctarsul}}</div></div>
+                                <div class="width_003"><div>{{form.plc_ctamyor}}</div></div>
+                                <div class="width_003"><div>{{form.plc_tipocta}}</div></div>
+                            </div>
+{% endcomment %}
+                        </div>
+                        <br>
+                        <div> <button class="icon-database form_submit" type="submit">  Submit  </button></div>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        {% endblock context%}

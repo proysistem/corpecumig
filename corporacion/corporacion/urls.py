@@ -20,10 +20,13 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^AppUsers/', include('apps.users.urls', namespace="usuarios",)),
-    url(r'^AppEvent/', include('apps.eventos.urls', namespace="eventos",)),
+    url(r'^AppUsers/', include('apps.users.urls',      namespace="usuarios",)),
+    url(r'^AppParam/', include('apps.parametros.urls', namespace="parametros",)),
+    url(r'^AppFinaz/', include('apps.finanzas.urls',   namespace="finanzas",)),
+    url(r'^AppSocio/', include('apps.socios.urls',     namespace="socios",)),
+    url(r'^AppEvent/', include('apps.eventos.urls',    namespace="eventos",)),
     url(r'^AppVisit/', include('apps.visitantes.urls', namespace="visitantes",)),
-    url(r'', include('apps.inicio.urls', namespace="inicio",)),
+    url(r'', include('apps.inicio.urls',               namespace="inicio",)),
 ]
 
 

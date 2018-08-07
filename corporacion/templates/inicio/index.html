@@ -6,9 +6,16 @@
 			<section class="fondo_page">
 				<article class="back_slide">
 					<div id="back_image">
-						<img src="static/images/oportunidad.jpg">
+						<a href="{% url 'socios:soc_new' %}">
+							<img src="static/images/oportunidad.jpg" onLoad="popopcion()">
+						</a>
 					</div>
 					<div class="aside_main_content">
+						<br>
+						<div class="width_100">
+							<a href="{% url 'socios:soc_new' %}"><img height="80" src="static/images/quiero1h.png"></a>
+						</div>
+
 						<div><h1>Elija  su  Llave</h1></div>
 						<div>
 							<img src="static/images/hoy.jpg">
@@ -24,10 +31,11 @@
 						</div>
 						<div>
 						{% comment %}	<a href="{% url 'visitantes:evn_panel' %}"><img src="static/images/key4.jpg"></a>  {% endcomment %}
-							<a href="{% url 'inicio:acc_panel' %}"><img src="static/images/key4.jpg"></a>
-						}
+							<a href="{% url 'socios:soc_new' %}"><img src="static/images/key4.jpg"></a>
 						</div>
-
+						<div>
+							<a class="color_yellow" href="http://www.supercias.gob.ec">Verificar en la superintendencia de compañias</a>
+						</div>
 					</div>
 				</article>
 			</section>
@@ -35,6 +43,13 @@
 
 {% block js %}
 	<script type="text/javascript">
+
+	function popopcion(){
+		var pop_laurl = "{% url 'socios:pop_opcion' %}";
+ 		// window.open(pop_laurl, "pop_opcion", "directories=no,menubar=no,status=no,toolbar=no,location=no,scrollbars=no,fullscreen=no,height=280,width=620,left=210,top=200");
+		window.open(pop_laurl, "name", "toolbar=0, location=0, width=620, height=280", "directories=0, status=0, menuBar=0 ,scrollbars=0, resizable=1, top=200, left=210, right=150, margin=0, border=0");
+		//window.open("static/images/quiero2h.png", "name", "toolbar=0, location=0, width=850, height=350", "directories=0, status=0, menuBar=0 ,scrollbars=0, resizable=1, left=150, right=150, margin=0, border=0");
+	}
 
 	function empleo(){
 		alert("Sobresaturado..!!");

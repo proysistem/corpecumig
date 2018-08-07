@@ -1,0 +1,93 @@
+{% extends 'base/base_socio.html' %}
+
+{% block title %} Registrar Socios {% endblock title %}</title>
+{% block context%}
+		<div class="content">
+			{% include 'socios/nav_socios.html' %}
+		</div>
+		<div class="content_contact">
+				<section class="form_content">
+					<div class="formulario" >
+						<h2>Felicitaciones</h2><br>
+						<P>Registrarse aquí, significa que Usted decidió ser socio propietario de esta corporación de inversiones "COREEX INVESTMENTS S.A.".<br><br>
+						1ero. Solo registre todos los datos de manera cuidadosa, dado que con estos datos imprimiremos su certificado de deposito y su titulo, posteriormente.<br><br>
+						2do. Tome una foto de cada lado de su cédula. Si no tiene cédula, puede hacerlo de su pasaporte de la primera hoja de ambos lados, y, esas fotos súba aquí, o, envíenos como mensaje al 914-318-6320 con sus nombres y apellidos.<br><br>
+
+						<span class="color_yellow">
+							IMPORTENTE: Si aún no ha hecho los depósitos, al registrarse le haremos llegar a su teléfono; el número de las cuentas a las que puede hacer el envío, deposito, o, transferencia bancaria.<br><br>
+							El depósito puede hacerlo de tres maneras. 1) Hacer un depósito directo en una agencia en ecuador.  2) Hacer un envio a través de una agencia, directo a la cuenta de la empresa.  3) Si su dinero lo tiene en un banco en cualquier parte del mundo, puede hacer una transferencia directa a la cuenta de la empresa.
+						</span><br><br>
+
+						3ro. Sáquele una foto de las papeletas de depósito por la inscripción y/o de la papeleta por compra de las acciones, de igual forma subale en este sitio, o, envíenos una foto por texto al 914-318-6320, y, quedara constancia en sus datos; la transacción realizada, además el certificado  y posteriormente el titulo seran entregados en equivalencia a esos valores.<br><br><br>
+
+						Cone estos sencillos pasos,  Usted, podra convertirse en dueño de esta moderna empresa,  y,  ser parte de esta corporación.<br><br>
+
+						</P>
+					</div>
+					<form  class="formulario" method="POST" enctype="multipart">{% csrf_token %}
+						<div class="group"><div class="flex_nowrap"><span><h1 class="form_titulo">Registro de Socios</h1></span><span class="align_tex_right">{{form.soc_fechreg}}</span></div>
+
+						{% if form.errors %}
+
+							<div class="form_errors" role="alert">
+								{{ form.errors }}
+							</div>
+
+						{% endif %}
+
+						{% for field in form %}
+							{% for error in field.errors %}
+								<strong>{{ field.label }}</strong>: {{ error }}<br>
+							{% endfor %}
+						{% endfor %}
+
+						{% for error in form.non_field_errors %}
+							<strong>{{ error }}</strong>
+						{% endfor %}
+
+
+						{% if nuevo_mov.errors %}
+
+							<div class="form_errors" role="alert">
+								{{ nuevo_mov.errors }}
+							</div>
+
+						{% endif %}
+
+						{% for field in nuevo_mov %}
+							{% for error in field.errors %}
+								<strong>{{ field.label }}</strong>: {{ error }}<br>
+							{% endfor %}
+						{% endfor %}
+
+						{% for error in nuevo_mov.non_field_errors %}
+							<strong>{{ error }}</strong>
+						{% endfor %}
+						<div><div><label for="{{form.soc_nombres.name}}">{{form.soc_nombres.label}}</label></div><div>{{form.soc_nombres}}</div></div>
+						<div><div><label for="{{form.soc_apellid.name}}">{{form.soc_apellid.label}}</label></div><div>{{form.soc_apellid}}</div></div>
+						<div><div><label for="{{form.soc_fechnac.name}}">{{form.soc_fechnac.label}}</label></div><div>{{form.soc_fechnac}}</div></div>
+						<div><div><label for="{{form.soc_identif.name}}">{{form.soc_identif.label}}</label></div><div>{{form.soc_identif}}</div></div>
+						<div><div><label for="{{form.soc_direcci.name}}">{{form.soc_direcci.label}}</label></div><div>{{form.soc_direcci}}</div></div>
+						<div><div><label for="{{form.soc_citynam.name}}">{{form.soc_citynam.label}}</label></div><div>{{form.soc_citynam}}</div></div>
+						<div><div><label for="{{form.soc_statnam.name}}">{{form.soc_statnam.label}}</label></div><div>{{form.soc_statnam}}</div></div>
+						<div><div><label for="{{form.soc_paisnam.name}}">{{form.soc_paisnam.label}}</label></div><div>{{form.soc_paisnam}}</div></div>
+						<div><div><label for="{{form.soc_zipcodg.name}}">{{form.soc_zipcodg.label}}</label></div><div>{{form.soc_zipcodg}}</div></div>
+						<div><div><label for="{{form.soc_telefon.name}}">{{form.soc_telefon.label}}</label></div><div>{{form.soc_telefon}}</div></div>
+						<div><div><label for="{{form.soc_celular.name}}">{{form.soc_celular.label}}</label></div><div>{{form.soc_celular}}</div></div>
+						<div><div><label for="{{form.soc_correoe.name}}">{{form.soc_correoe.label}}</label></div><div>{{form.soc_correoe}}</div></div>
+						<div><div><label for="{{form.soc_imgfoto.name}}">{{form.soc_imgfoto.label}}</label></div><div>{{form.soc_imgfoto}}</div></div>
+						<div><div><label for="{{form.soc_imgidea.name}}">{{form.soc_imgidea.label}}</label></div><div>{{form.soc_imgidea}}</div></div>
+						<div><div><label for="{{form.soc_imgideb.name}}">{{form.soc_imgideb.label}}</label></div><div>{{form.soc_imgideb}}</div></div>
+						<div><div><label for="{{form.soc_accions.name}}">{{form.soc_accions.label}}</label></div><div>{{form.soc_accions}}</div></div>
+						<br>
+						<input type="hidden" name="{{ soc_registr }}" value="No">
+						<input type="hidden" name="{{ soc_rgunico }}" value="9">
+						<input type="hidden" name="{{ soc_categor }}" value="0">
+						<br>
+						<div ><button class="icon-database form_submit" type="submit">  Enviar  </button></div>
+						<br>
+
+					</form>
+				</section>
+		</div>
+{% endblock context %}

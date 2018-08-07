@@ -47,6 +47,9 @@ DJANGO_APPS = [
 LOCAL_APPS = [
     'apps.inicio',
     'apps.users',
+    'apps.parametros',
+    'apps.finanzas',
+    'apps.socios',
     'apps.eventos',
     'apps.visitantes',
 ]

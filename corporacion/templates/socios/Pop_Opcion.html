@@ -1,0 +1,23 @@
+		{% extends 'base/base.html' %}
+
+{% block title %} Registrar Socios {% endblock title %}</title>
+{% load staticfiles %}
+
+{% block css %}
+ 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock css %}
+
+{% block content%}
+						<div>
+							<a href=""><img class="width_100" height="320" src="../static/images/quiero2h.png" onclick="cerrarme()"></a>
+						</div>
+
+{% endblock content %}
+
+{% block js %}
+	<script type="text/javascript">
+		function cerrarme(){
+		 	window.close();
+			}
+	</script>
+{% endblock js %}

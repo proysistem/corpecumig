@@ -1,0 +1,133 @@
+{% extends 'base/base.html' %}
+{% block super %}
+
+    <script type="text/javascript">
+
+        var jsw_varibll_a;
+        var jsw_varibll_b;
+        var jsw_varibll_c;
+        var jsw_varibll_d;
+        var jsw_varibll_e;
+        var jsw_varibll_f;
+        var jsw_varibll_g;
+        var jsw_varibll_h;
+        var jsw_varibll_i;
+        var jsw_varibll_j;
+        var jsw_varibll_k;
+        var jsw_varibll_l;
+        var jsw_varibll_m;
+        var jsw_varibll_n;
+        var jsw_varibll_o;
+
+        window.onload=function(){
+            {% if err_err404 %}
+                opener.document.form_plancta.pop_detalle.value="Error.. Código invalido";
+                opener.document.getElementById('idf_cuenta1').focus();
+            {% else %}
+                jsw_varibll_a=document.getElementById('field_a').value || "";
+                jsw_varibll_b=document.getElementById('field_b').value || "";
+                jsw_varibll_c=document.getElementById('field_c').value || "";
+                jsw_varibll_d=document.getElementById('field_d').value || "";
+                jsw_varibll_e=document.getElementById('field_e').value || "";
+                jsw_varibll_f=document.getElementById('field_f').value || "";
+                jsw_varibll_g=document.getElementById('field_g').value || "";
+                jsw_varibll_h=document.getElementById('field_h').value || "";
+                jsw_varibll_i=document.getElementById('field_i').value || "";
+                jsw_varibll_j=document.getElementById('field_j').value || "";
+                jsw_varibll_k=document.getElementById('field_k').value || "";
+                jsw_varibll_l=document.getElementById('field_l').value || "";
+                jsw_varibll_m=document.getElementById('field_m').value || "";
+                jsw_varibll_n=document.getElementById('field_n').value || "";
+                jsw_varibll_o=document.getElementById('field_o').value || "";
+                opener.document.form_plancta.plc_ncuenta.value=jsw_varibll_a;
+                opener.document.form_plancta.plc_cuenta1.value=jsw_varibll_b;
+                opener.document.form_plancta.plc_cuenta2.value=jsw_varibll_c;
+                opener.document.form_plancta.plc_cuenta3.value=jsw_varibll_d;
+                opener.document.form_plancta.plc_cuenta4.value=jsw_varibll_e;
+                opener.document.form_plancta.plc_auxili1.value=jsw_varibll_f;
+                opener.document.form_plancta.plc_auxili2.value=jsw_varibll_g;
+                opener.document.form_plancta.plc_auxili3.value=jsw_varibll_h;
+                opener.document.form_plancta.plc_detalle.value=jsw_varibll_i;
+                opener.document.form_plancta.plc_ctabaln.value=jsw_varibll_j;
+                opener.document.form_plancta.plc_ctanexo.value=jsw_varibll_k;
+                opener.document.form_plancta.plc_ctarsul.value=jsw_varibll_l;
+                opener.document.form_plancta.plc_ctamyor.value=jsw_varibll_m;
+                opener.document.form_plancta.plc_nivlcta.value=jsw_varibll_n;
+                opener.document.form_plancta.plc_tipocta.value=jsw_varibll_o;
+                if (jsw_varibll_n == "0"){
+                    opener.document.getElementById('idf_detalle').focus();
+                    }
+                else
+                if (jsw_varibll_n == "1"){
+                    opener.document.getElementById('idf_detalle').focus();
+                    }
+                else
+                if (jsw_varibll_n == "2"){
+                    opener.document.getElementById('idf_detalle').focus();
+                } else
+                if (jsw_varibll_n == "3"){
+                    opener.document.getElementById('idf_detalle').focus();
+                } else
+                if (jsw_varibll_n == "4"){
+                    opener.document.getElementById('idf_auxili1').focus();
+                } else
+                if (jsw_varibll_n == "5"){
+                    opener.document.getElementById('idf_auxili2').focus();
+                } else
+                if (jsw_varibll_n == "6"){
+                    opener.document.getElementById('idf_auxili3').focus();
+                }
+            {% endif %}
+        window.close();
+        };
+    </script>
+
+{% endblock super %}
+
+{% block content %}
+{% comment %}
+                        {% if form.errors %}
+
+                            <div class="form_errors" role="alert">
+                                {{ form.errors }}
+                            </div>
+
+                        {% endif %}
+
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <strong>{{ field.label }}</strong>: {{ error }}<br>
+                            {% endfor %}
+                        {% endfor %}
+
+                        {% for error in form.non_field_errors %}
+                            <strong>{{ error }}</strong>
+                        {% endfor %}
+
+                        {% if forms.error %}
+                            <div class="form_errors" role="alert">
+                                {{ form.error }}
+                            </div>
+                        {% endif %}
+
+{% endcomment %}
+    <form mane='form_plancta' method="POST">{% csrf_token %}
+        <input type="hidden" name="" id="field_a" value="{{ object.plc_ncuenta }}">
+        <input type="hidden" name="" id="field_b" value="{{ object.plc_cuenta1 }}">
+        <input type="hidden" name="" id="field_c" value="{{ object.plc_cuenta2 }}">
+        <input type="hidden" name="" id="field_d" value="{{ object.plc_cuenta3 }}">
+        <input type="hidden" name="" id="field_e" value="{{ object.plc_cuenta4 }}">
+        <input type="hidden" name="" id="field_f" value="{{ object.plc_auxili1 }}">
+        <input type="hidden" name="" id="field_g" value="{{ object.plc_auxili2 }}">
+        <input type="hidden" name="" id="field_h" value="{{ object.plc_auxili3 }}">
+        <input type="hidden" name="" id="field_i" value="{{ object.plc_detalle }}">
+        <input type="hidden" name="" id="field_j" value="{{ object.plc_ctabaln }}">
+        <input type="hidden" name="" id="field_k" value="{{ object.plc_ctanexo }}">
+        <input type="hidden" name="" id="field_l" value="{{ object.plc_ctarsul }}">
+        <input type="hidden" name="" id="field_m" value="{{ object.plc_ctamyor }}">
+        <input type="hidden" name="" id="field_n" value="{{ object.plc_nivlcta }}">
+        <input type="hidden" name="" id="field_o" value="{{ object.plc_tipocta }}">
+    </form>
+
+{% endblock content %}
+

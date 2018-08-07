@@ -15,7 +15,7 @@ h1, h2,h3, h4, h5, h6{
     }
 body{
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.0em;
     }
 /*------------------------ Estilos del menu responsive ----------------------- */
 
@@ -87,7 +87,7 @@ body{
     }
 
 /*------------------------ Estilos responsive design ----------------------- */
-@media(min-width: 768px){
+@media(min-width: 820px){
     .back_slide>.back_image
     {
     width: 85%;
@@ -96,7 +96,7 @@ body{
     {
     background-color: blue;
     padding: 5px 5px;
-    width: 17%;
+    width: 20%;
     align-content: right;
     }
     .form_columns
@@ -145,86 +145,3 @@ body{
     font-size: 2.2em;
     }
 }
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/* - - - - - - - - - - - - Seting standard - - - - - - - - - - - - */
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-.align_tex_right {text-align: right;}
-.align_tex_letf {text-align: left;}
-.align_tex_center {text-align: center;}
-
-.align_itm_right {justify-content: flex-end;}
-.align_itm_letf {align-items: flex_start;}
-.align_itm_center {align-items: flex_center;}
-
-.font_little{font-size: 10px; height: 15px;}
-.font_small{font-size: small;}
-.font_medium{font-size: medium;}
-.font_large{font-size: large;}
-
-.color_780827
-    {
-    background: linear-gradient(#510909, #881F1F, #110903); /* Standard syntax */
-    color: #FFF;
-    padding: 5px;
-    }
-.color_yellow
-    {
-    color: yellow;
-    }
-.rowcolor:nth-child(odd) {
-    background-color: rgba(242,255,255, 0.8);
-    padding: 0 0 1px 0;
-}
-.rowcolor:nth-child(even) {
-    background-color:#ffffff;
-    padding: 0 0 1px 0;
-}
-
-
-.width_760 {width: 7.67%;}
-.width_003 {width: 003%;}
-.width_005 {width: 005%;}
-.width_010 {width: 010%;}
-.width_015 {width: 015%;}
-.width_020 {width: 020%;}
-.width_025 {width: 025%;}
-.width_030 {width: 030%;}
-.width_035 {width: 035%;}
-.width_040 {width: 040%;}
-.width_045 {width: 045%;}
-.width_050 {width: 050%;}
-.width_090 {width: 090%;}
-.width_095 {width: 095%;}
-.width_099 {width: 099%;}
-.width_100 {width: 100%;}
-
-.flex_display
-    {
-    display: flex;
-    }
-.flex_cloumn
-    {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: flex-end;
-    align-content: flex-start;
-}
-.flex_flow
-    {
-    display: wrap;
-    }
-.flex_content
-    {
-    justify-content: center;
-    }
-.flex_wraps
-    {
-    display: inline-flex;
-    }
-.flex_align
-    {
-    align-content: stretch;
-    }
