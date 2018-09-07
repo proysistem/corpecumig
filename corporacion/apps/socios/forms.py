@@ -1,5 +1,5 @@
 from django import forms
-from .models import Imagen, Socio
+from .models import Imagen, Socio, Cosocio
 from django.utils.timezone import localtime, now
 
 
@@ -65,6 +65,7 @@ class SocioForm(forms.ModelForm):
                 'soc_rgunico',
                 'soc_registr',
                 'soc_accions',
+                'soc_cosocio',
                 'soc_categor',
                 ]
         labels = {
@@ -85,6 +86,7 @@ class SocioForm(forms.ModelForm):
                 'soc_imgideb': 'Imaden del Id. lado(B)',
                 'soc_rgunico': 'Regist. Unico',
                 'soc_registr': 'Acionista registrado',
+                'soc_cosocio': 'Quiere adherir a alguien',
                 'soc_accions': 'Cantidad de Aciones',
                 # 'soc_categor': 'Categoría    ',
                 }
@@ -107,5 +109,83 @@ class SocioForm(forms.ModelForm):
                 'soc_rgunico': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                 'soc_registr': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                 'soc_accions': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'soc_cosocio': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                 'soc_categor': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                }
+
+
+class CosocioForm(forms.ModelForm):
+    cso_fechreg = forms.DateField(
+        initial=localtime(now()).date(),
+        widget=forms.DateInput(attrs={"type": "date"}, format='%Y-%m-%d',)
+    )
+
+    class Meta:
+        model = Cosocio
+
+        fields = [
+                'cso_idsocio',
+                'cso_nombres',
+                'cso_apellid',
+                'cso_fechnac',
+                'cso_identif',
+                'cso_direcci',
+                'cso_citynam',
+                'cso_statnam',
+                'cso_paisnam',
+                'cso_zipcodg',
+                'cso_telefon',
+                'cso_celular',
+                'cso_correoe',
+                'cso_imgfoto',
+                'cso_imgidea',
+                'cso_imgideb',
+                'cso_rgunico',
+                'cso_registr',
+                'cso_accions',
+                'cso_categor',
+                ]
+        labels = {
+                # 'cso_idsocio': ''
+                'cso_nombres': 'Nombres  ',
+                'cso_apellid': 'Apellidos',
+                'cso_fechnac': 'Fecha/Nacimiento (dd/mm/aa)',
+                'cso_identif': 'Núm. de Identificación',
+                'cso_direcci': 'Dirección',
+                'cso_citynam': 'Ciudad',
+                'cso_statnam': 'Estado o Provincia',
+                'cso_paisnam': 'País',
+                'cso_zipcodg': 'Código postal',
+                'cso_telefon': 'Telef.de casa',
+                'cso_celular': 'Núm. /celular',
+                'cso_correoe': 'Correo electrónico',
+                'cso_imgfoto': 'Foto de Socio',
+                'cso_imgidea': 'Imaden del Id. lado(A)',
+                'cso_imgideb': 'Imaden del Id. lado(B)',
+                'cso_rgunico': 'Regist. Unico',
+                'cso_registr': 'Acionista registrado',
+                'cso_accions': 'Cantidad de Aciones',
+                # 'cso_categor': 'Categoría    ',
+                }
+        widgets = {
+                # 'cso_idsocio'
+                'cso_nombres': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off', 'size': '30'}),
+                'cso_apellid': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_fechnac': forms.DateInput(attrs={'class': 'form_input', 'type': 'date'}),
+                'cso_identif': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off', 'size': '15'}),
+                'cso_direcci': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_citynam': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_statnam': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_paisnam': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_zipcodg': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_telefon': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_celular': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_correoe': forms.EmailInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_imgfoto': forms.ClearableFileInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_imgidea': forms.ClearableFileInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_imgideb': forms.ClearableFileInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_rgunico': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_registr': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_accions': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_categor': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                  }

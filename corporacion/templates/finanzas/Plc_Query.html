@@ -111,6 +111,9 @@
                         {% endif %}
 
 {% endcomment %}
+    {% if object_list %}
+        {% for var_colfield in object_list %}
+
     <form mane='form_plancta' method="POST">{% csrf_token %}
         <input type="hidden" name="" id="field_a" value="{{ object.plc_ncuenta }}">
         <input type="hidden" name="" id="field_b" value="{{ object.plc_cuenta1 }}">
@@ -127,6 +130,11 @@
         <input type="hidden" name="" id="field_m" value="{{ object.plc_ctamyor }}">
         <input type="hidden" name="" id="field_n" value="{{ object.plc_nivlcta }}">
         <input type="hidden" name="" id="field_o" value="{{ object.plc_tipocta }}">
+                                </tr>
+                        {% endfor %}
+                        {% else %}
+                        <h4> No hay registros en Plan de Ctas.  </h4>
+                        {% endif %}
     </form>
 
 {% endblock content %}

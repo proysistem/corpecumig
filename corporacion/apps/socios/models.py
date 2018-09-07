@@ -21,10 +21,38 @@ class Socio(models.Model):
     soc_registr = models.CharField(default='No', max_length=3,  null=True, blank=True)
     soc_accions = models.PositiveIntegerField()
     soc_fechreg = models.DateField('Fecha de registración', auto_now_add=True, editable=False)
+    soc_cosocio = models.CharField(default='No', max_length=3,  null=True, blank=True)
     soc_categor = models.CharField(default='0', max_length=3, null=True, blank=True)
 
     def __str__(self):
         return "%s %s" % (self.soc_nombres, self.soc_apellid)
+
+
+class Cosocio(models.Model):
+    cso_idsocio = models.ForeignKey(Socio)
+    cso_nombres = models.CharField('Primer Nombre', max_length=25)
+    cso_apellid = models.CharField('Apellidos', max_length=30)
+    cso_fechnac = models.DateField('Fecha de Nacimiento')
+    cso_identif = models.CharField('Id. del Co-socio', unique=True,  db_index=True, max_length=15)
+    cso_direcci = models.CharField('Direccion Domiciliaria', max_length=50)
+    cso_citynam = models.CharField('Ciudad', max_length=30, null=True, blank=True)
+    cso_statnam = models.CharField('Estado / Porvincia', max_length=30, null=True, blank=True)
+    cso_paisnam = models.CharField('País', max_length=30, null=True, blank=True)
+    cso_zipcodg = models.CharField('Cód. Postal', max_length=15, null=True, blank=True)
+    cso_telefon = models.CharField('Telefono', max_length=15, null=True, blank=True)
+    cso_celular = models.CharField('Celular', max_length=15, null=True, blank=True)
+    cso_correoe = models.EmailField('e-mail',  max_length=75, null=True, blank=True)
+    cso_imgfoto = models.ImageField(upload_to="cosocio", null=True, blank=True)
+    cso_imgidea = models.ImageField(upload_to="cosocio", null=True, blank=True)
+    cso_imgideb = models.ImageField(upload_to="cosocio", null=True, blank=True)
+    cso_rgunico = models.CharField('Registro Unico', max_length=20, blank=True)
+    cso_registr = models.CharField(default='No', max_length=3,  null=True, blank=True)
+    cso_accions = models.PositiveIntegerField()
+    cso_fechreg = models.DateField('Fecha de registración', auto_now_add=True, editable=False)
+    cso_categor = models.CharField(default='0', max_length=3, null=True, blank=True)
+
+    def __str__(self):
+        return "%s %s" % (self.cso_nombres, self.cso_apellid)
 
 
 class Imagen(models.Model):
