@@ -10,9 +10,7 @@ from .forms import SocioForm, CosocioForm
 class Soc_Panel(ListView):
     """Listado de Socio"""
     model = Socio
-    form_class = SocioForm
     template_name = 'socios/Soc_Panel.html'
-    ordering = ['pk']
     paginate_by = 15
 
 
