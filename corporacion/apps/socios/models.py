@@ -23,6 +23,7 @@ class Socio(models.Model):
     soc_fechreg = models.DateField('Fecha de registración', auto_now_add=True, editable=False)
     soc_cosocio = models.BooleanField(default=False)
     soc_categor = models.CharField(default='0', max_length=3, null=True, blank=True)
+    soc_observa = models.CharField('Observaciones', max_length=90, null=True, blank=True)
 
     def __str__(self):
         return "%s %s" % (self.soc_nombres, self.soc_apellid)
