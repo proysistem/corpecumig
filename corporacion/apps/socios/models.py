@@ -21,7 +21,7 @@ class Socio(models.Model):
     soc_registr = models.CharField(default='No', max_length=3,  null=True, blank=True)
     soc_accions = models.PositiveIntegerField()
     soc_fechreg = models.DateField('Fecha de registración', auto_now_add=True, editable=False)
-    soc_cosocio = models.CharField(default='No', max_length=3,  null=True, blank=True)
+    soc_cosocio = models.BooleanField(default=False)
     soc_categor = models.CharField(default='0', max_length=3, null=True, blank=True)
 
     def __str__(self):
@@ -29,7 +29,7 @@ class Socio(models.Model):
 
 
 class Cosocio(models.Model):
-    cso_idsocio = models.ForeignKey(Socio)
+    cso_idsocio = models.ForeignKey(Socio, null=True, blank=True)
     cso_nombres = models.CharField('Primer Nombre', max_length=25)
     cso_apellid = models.CharField('Apellidos', max_length=30)
     cso_fechnac = models.DateField('Fecha de Nacimiento')

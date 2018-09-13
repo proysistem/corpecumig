@@ -1,0 +1,96 @@
+{% extends 'base/base_socios.html' %}
+
+{% block title %} Socios Registrados {% endblock title %}</title>
+
+{% block context %}
+
+			<div class="crea_content">
+				<h3 class="crea_proceso">Socios:  Socios Registrados</h3>
+				<a class="icon-database crea_boton" href="{% url 'socios:soc_new' %}">Crear Socios</a>
+			</div>
+			<div>
+				<table border="1" >
+					<thead>
+					 	<tr color="#:000066">
+					 		<th class="head_tab">Fotos de socio</th>
+					 		<th class="head_tab">Nombres</th>
+					 		<th class="head_tab">Apellid</th>
+					 		<th class="head_tab">F/Nacimient.</th>
+					 		<th class="head_tab">Nó. de Identif.</th>
+					 		<th class="head_tab">Direcc. domicilio</th>
+					 		<th class="head_tab">Ciudad</th>
+					 		<th class="head_tab">Estado</th>
+					 		<th class="head_tab">Pais</th>
+					 		<th class="head_tab">Cód.Postal</th>
+					 		<th class="head_tab">#: telefon</th>
+					 		<th class="head_tab">#: celular</th>
+					 		<th class="head_tab">e-mail</th>
+					 		{% comment %}
+					 		<th class="head_tab">soc_imgidea</th>
+					 		<th class="head_tab">soc_imgideb</th>
+					 		{% endcomment %}
+					 		<th class="head_tab">Regist. único</th>
+					 		<th class="head_tab">Status</th>
+					 		<th class="head_tab">Accions</th>
+					 		<th class="head_tab">F.registracion</th>
+					 		<th class="head_tab">Co-Socio</th>
+					 		<th class="head_tab">Categ.</th>
+
+					 	</tr>
+					</thead>
+					<tbody border="0">
+					 	{% if object_list %}
+					 	{% for var_socfield in object_list %}
+					 	<tr>
+                            <td>{% if var_socfield.soc_imgfoto %}<img src="{{var_socfield.soc_imgfoto.url}}" width="80px">{% endif %}</td>
+					 		<td class="columns_tab">{{ var_socfield.soc_nombres }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_apellid }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_fechnac }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_identif }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_direcci }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_citynam }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_statnam }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_paisnam }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_zipcodg }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_telefon }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_celular }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_correoe }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_imgidea }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_imgideb }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_rgunico }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_registr }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_accions }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_fechreg }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_cosocio }} </td>
+					 		<td class="columns_tab">{{ var_socfield.soc_categor }} </td>
+
+{% comment %}
+					 		<th class="head_tab" colspan="3">Opción</th>
+							<td class="columns_tab"><a class="icon-eye botones"   href="{% url 'socios:evnview'  var_socfield.pk %}"></a></td>
+							<td class="columns_tab"><a class="icon-edit botones"  href="{% url 'socios:evnedit'  var_socfield.pk %}"></a></td>
+							<td class="columns_tab"><a class="icon-trash botones" href="{% url 'socios:evndelet' var_socfield.pk %}"></a></td>
+{% endcomment %}
+
+						</tr>
+						{% endfor %}
+						{% else %}
+						<h4> No hay registros en socios </h4>
+						{% endif %}
+					</tbody>
+				</table>
+				<div class="page_content">
+					<ul class="pager_botons">
+						<li>
+							{% if page_obj.has_previous %}
+							<a class="icon-left-open pager_prev" href="?page={{page_obj.previous_page_number}}">Previous</a>
+							{% endif %}
+						</li>
+						<li>
+							{% if page_obj.has_next %}
+							<a class="pager_next" href="?page={{page_obj.next_page_number}}">Next <span class="icon-right-open"></span></a>
+							{% endif %}
+						</li>
+					</ul>
+				</div>
+			</div>
+{% endblock context %}

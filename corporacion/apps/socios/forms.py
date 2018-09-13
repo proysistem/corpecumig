@@ -43,6 +43,19 @@ class SocioForm(forms.ModelForm):
         widget=forms.DateInput(attrs={"type": "date"}, format='%Y-%m-%d',)
     )
 
+    soc_fechnac = forms.DateField(
+        initial=localtime(now()).date(),
+        label='Fecha de Nacimiento (mm/dd/yy)',
+        widget=forms.DateInput(attrs={'class': 'form_input', 'type': 'date'}, format='%Y-%m-%d',)
+    )
+
+    soc_cosocio = forms.TypedChoiceField(
+                   coerce=lambda x: x == 'Si',
+                   choices=((False, 'No'), (True, 'Si')),
+                   label='Registrar conyugue o Co-Soci@',
+                   widget=forms.RadioSelect
+    )
+
     class Meta:
         model = Socio
 
@@ -82,8 +95,8 @@ class SocioForm(forms.ModelForm):
                 'soc_celular': 'Núm. /celular',
                 'soc_correoe': 'Correo electrónico',
                 'soc_imgfoto': 'Foto de Socio',
-                'soc_imgidea': 'Imaden del Id. lado(A)',
-                'soc_imgideb': 'Imaden del Id. lado(B)',
+                'soc_imgidea': 'Imagen del Id. lado(A)',
+                'soc_imgideb': 'Imagen del Id. lado(B)',
                 'soc_rgunico': 'Regist. Unico',
                 'soc_registr': 'Acionista registrado',
                 'soc_cosocio': 'Quiere adherir a alguien',
@@ -93,7 +106,8 @@ class SocioForm(forms.ModelForm):
         widgets = {
                 'soc_nombres': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off', 'size': '30'}),
                 'soc_apellid': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
-                'soc_fechnac': forms.DateInput(attrs={'class': 'form_input', 'type': 'date'}),
+                # 'soc_fechnac': forms.DateInput(attrs={'class': 'form_input', 'type': 'date'}),
+                # 'soc_fechnac': forms.DateInput(attrs={'class': 'form_input', 'type': 'date'}, format={'%Y-%m-%d'}),
                 'soc_identif': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off', 'size': '15'}),
                 'soc_direcci': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                 'soc_citynam': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
@@ -108,8 +122,8 @@ class SocioForm(forms.ModelForm):
                 'soc_imgideb': forms.ClearableFileInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                 'soc_rgunico': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                 'soc_registr': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
-                'soc_accions': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
-                'soc_cosocio': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'soc_accions': forms.NumberInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                # 'soc_cosocio': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                 'soc_categor': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                 }
 
@@ -118,6 +132,12 @@ class CosocioForm(forms.ModelForm):
     cso_fechreg = forms.DateField(
         initial=localtime(now()).date(),
         widget=forms.DateInput(attrs={"type": "date"}, format='%Y-%m-%d',)
+    )
+
+    cso_fechnac = forms.DateField(
+        initial=localtime(now()).date(),
+        label='Fecha de Nacimiento (mm/dd/yy)',
+        widget=forms.DateInput(attrs={'class': 'form_input', 'type': 'date'}, format='%Y-%m-%d',)
     )
 
     class Meta:
@@ -160,8 +180,8 @@ class CosocioForm(forms.ModelForm):
                 'cso_celular': 'Núm. /celular',
                 'cso_correoe': 'Correo electrónico',
                 'cso_imgfoto': 'Foto de Socio',
-                'cso_imgidea': 'Imaden del Id. lado(A)',
-                'cso_imgideb': 'Imaden del Id. lado(B)',
+                'cso_imgidea': 'Imagen del Id. lado(A)',
+                'cso_imgideb': 'Imagen del Id. lado(B)',
                 'cso_rgunico': 'Regist. Unico',
                 'cso_registr': 'Acionista registrado',
                 'cso_accions': 'Cantidad de Aciones',
@@ -186,6 +206,6 @@ class CosocioForm(forms.ModelForm):
                 'cso_imgideb': forms.ClearableFileInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                 'cso_rgunico': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                 'cso_registr': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
-                'cso_accions': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
-                'cso_categor': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                'cso_accions': forms.NumberInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
+                # 'cso_categor': forms.TextInput(attrs={'class': 'form_input', 'autocomplete': 'off'}),
                  }
